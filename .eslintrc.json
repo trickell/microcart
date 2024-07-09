@@ -1,0 +1,8 @@
+{
+  "parserOptions": {
+    "babelOptions": {
+      "presets": ["next/babel"]
+    }
+  },
+  "extends": ["next/core-web-vitals"]
+}
