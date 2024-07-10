@@ -7,8 +7,8 @@ import Product from "../components/product";
 export default function Shopping () {
 
     return (
-        <div>
-            <h1>Shopping Page</h1>
+        <div className="container">
+            <h1 className="pageheader">Shopping Page</h1>
             <Product />
         </div>
     );
