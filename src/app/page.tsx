@@ -12,9 +12,11 @@ export default function Home() {
       </h1>
       <h3>The little cart that <em>does</em></h3>
      </div>
+     <div className="homecontent">
       <Intro />
       <Login />
       <Signup />
+      </div>
     </main>
   );
 }
