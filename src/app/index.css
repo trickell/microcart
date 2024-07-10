@@ -66,7 +66,7 @@ body {
   .searchbar,
   .email,
   .password {
-    background-image: linear-gradient(#7be9ff, transparent);
+    background-image: linear-gradient(#9700ff, transparent);
     display: flex;
     padding:5px;
     margin:5px;
@@ -119,6 +119,8 @@ body {
     padding: 50px;
     border-top: 1px solid aqua;
     border-radius: 50px;
+    display: flex;
+  
   }
   
 /* Sections are the main divs for the the intro, login, and signup areas */
@@ -133,6 +135,8 @@ body {
     align-self: center;
     flex-direction: column;
     font-family: "Cabin", sans-serif;
+    margin-top: 30px;
+    
   }
   
   .logo {
@@ -162,8 +166,8 @@ body {
    }
 
   .main-box,
-  .Signup,
-  login
+  .login
+  
   {
     background-color: rgba(0,0,0,.75);
     border-radius: 50px;
@@ -177,7 +181,7 @@ body {
   }
 
   input
-  .Signup {
+   {
     font-size: 1.2em;
     font-weight: bold;
   }
@@ -189,14 +193,16 @@ body {
     align-items: center;
     padding: 10px;
   }
-  .login-wrapper {
+  .login-wrapper,
+  .Signup {
     display: flex;
     flex-direction: row;
     align-items: center;
     padding: 10px;
     justify-content: space-evenly;
   }
-  .login-btn {
+  .login-btn
+    {
     font-size: 1.2em;
     font-weight: bold;
     display: flex;
@@ -214,14 +220,13 @@ body {
     letter-spacing: 0.1em;
   }
 
-  .login-btn:hover {
-    background-image: conic-gradient( #9700ff, aqua, #9700ff);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: 0.1em;
+  .login-btn:hover,
+  .signup-btn:hover {
+   
     box-shadow: inset 0px 0px 5px 5px #000000;
   }
+
+
 
   a,
   a:hover,
@@ -230,6 +235,7 @@ body {
     text-decoration: none;
     color: inherit;
   }
+
     /* SPECIAL FONTS */
     @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
     .cabinfont {
@@ -255,3 +261,79 @@ body {
     background-color: blue;
     border-radius: 5px;
    }
+
+   /*================
+    THEME STYLE BUTTONS
+    =================*/
+
+    .themebutton {
+      margin: 5px;
+      border: 1px solid #9700ff;
+      border-radius: 50px;
+      padding: 10px;
+    }
+
+    .theme_selections {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 10px;
+      justify-content: space-evenly;
+      margin: 5px;
+      border: 1px solid #9700ff;
+      border-radius: 50px;
+    }
+
+    .title_theme_picker {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      display: flex;
+
+
+      justify-content: center;
+    }
+
+    .userpic {
+      height: 250px;
+      width: 250px;
+      color: #fff;
+      background-color: #9700ff;
+      border-radius: 50px;
+      margin-right: 20px;
+    }
+
+    .information {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 10px;
+      justify-content: space-evenly;
+      margin: 20px;
+      border: 1px solid #9700ff;
+      border-radius: 50px;
+    }
+    .profile_wrapper {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: no-wrap;
+      align-items: center;
+      padding: 10px;
+      justify-content: space-evenly;
+      margin: 20px;
+      border: 1px solid #9700ff;
+      border-radius: 50px;
+    }
+
+    .favorites {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 10px;
+      justify-content: space-evenly;
+      margin: 20px;
+      border: 1px solid #9700ff;
+      border-radius: 50px;
+    }
