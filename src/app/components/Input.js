@@ -1,5 +1,6 @@
+import React from 'react'
 
-export const Input = ({ label, type, id, placeholder }) => {
+const Input = ({ label, type, id, placeholder }) => {
   return (
     <div className="flex flex-col w-full gap-2 login">
 
@@ -34,3 +35,5 @@ export const Input = ({ label, type, id, placeholder }) => {
     </div>
   )
 }
+
+export default Input;
