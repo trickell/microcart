@@ -6,15 +6,12 @@ import Signup from "./components/Signup.js"
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <div className="microfy-home">
       <h1 className="text-4xl font-bold text-center">
         Welcome to <span className="text-blue-500">Microfiy</span>
       </h1>
-      <Image
-        src="/microfiy.png"
-        alt="Microfiy logo"
-        width={400}
-        height={400}
-      />
+      <h3>The little cart that <em>does</em></h3>
+     </div>
       <Intro />
       <Login />
       <Signup />

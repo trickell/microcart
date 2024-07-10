@@ -54,7 +54,7 @@ function TailwindNavbar() {
 <nav class="gray-200 bg-black">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
   <Link href={paths.home()} class="logo flex items-center space-x-3 rtl:space-x-reverse">
-        <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
+       
         <span className="microfy">Microfy</span>
         </Link>
     <button data-collapse-toggle="navbar-solid-bg" type="button" class="inline-flex items-center p-2 w-10 h-10 
@@ -86,10 +86,11 @@ function TailwindNavbar() {
         </li>
       </ul>
     </div>
-    <div className="search">
+    
+  </div>
+  <div className="searchaf">
       <input type="text" placeholder="Search" className="searchbar">
       </input>
-    </div>
   </div>
 </nav>
 
