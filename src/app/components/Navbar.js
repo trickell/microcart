@@ -55,7 +55,7 @@ function TailwindNavbar() {
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
   <Link href={paths.home()} class="logo flex items-center space-x-3 rtl:space-x-reverse">
        
-        <span className="microfy">Microfy</span>
+        <span className="microfy">Microfiy</span>
         </Link>
     <button data-collapse-toggle="navbar-solid-bg" type="button" class="inline-flex items-center p-2 w-10 h-10 
     justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 
