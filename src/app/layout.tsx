@@ -6,6 +6,7 @@ import "./index.css";
 const RootLayout = ({children}) => {
   return (
       <html>
+      
         <body>
           <div>
 

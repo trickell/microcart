@@ -1,5 +1,5 @@
 body {
-    margin: 0 auto;
+    
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
       sans-serif;
@@ -9,8 +9,14 @@ body {
     color: white;
     display: flex;
     justify-content: space-evenly;
+
   }
   
+  .container {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+
   /* ================
    TOP AND NAVBAR 
   ================ */
@@ -29,14 +35,39 @@ body {
   }
   
   .searchbar {
+    background-color: #7be9ff;
+    display: flex;
+    padding:5px;
+    margin:5px;
+    border-radius: 50px;
+    color: black;
     display: flex;
   }
   
-  #search {
-    padding: 10px;
-    margin-right: 5px;
+  .searchaf {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
   }
   
+  .nav {
+    /* background-image: linear-gradient( black, indigo); */
+    color: #9700ff;
+    box-shadow: inset 0px 0px 5px 0px #000000;
+    border-radius: 50px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #9700ff;
+    border-top: 2px solid aqua;
+    background-image: conic-gradient( #9700ff, aqua, #9700ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.1em;
+  }
+
   .search-btn {
     padding: 10px;
   }
@@ -45,8 +76,15 @@ body {
     display: flex;
     border-radius: 50px; 
   }
+
+  .microfy-home {
+    margin-bottom: 50px;
+    padding: 50px;
+    border-top: 1px solid aqua;
+    border-radius: 50px;
+  }
   
-  ul>* {
+  /* ul>* {
     margin: 20px;
     background-color: black;
     padding-left: 2vw;
@@ -62,13 +100,15 @@ body {
     padding-top: 1vw;
     padding-bottom: 1vw;
   }
-  
+   */
   section {
-    background-color: gray;
+    background-image: radial-gradient( #9700ff, aqua, blue, #9700ff);
+    font-size: 1.5em;
     padding: 25px;
     margin: 20px;
     align-items: center;
     border-radius: 50px;
+    border: 3 px solid;
   }
   
   section>.div {
@@ -76,6 +116,12 @@ body {
     flex-direction: column;
   }
   
+  .main-box {
+    background-color: black;
+    border-radius: 50px;
+    padding: 25px;  
+  }
+
   a,
   a:hover,
   a:focus,
@@ -83,7 +129,6 @@ body {
     text-decoration: none;
     color: inherit;
   }
-  
   
   /* product cards */
   
@@ -116,3 +161,87 @@ body {
       margin-bottom: 0;
     }
   }
+
+  /* ================
+   LOG IN INPUT BOX
+  ================ */
+    .login {
+      background-color: #000000;
+      color: white;
+      border-radius: 50px;
+      border: 5px solid #000000;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* SPECIAL FONTS */
+   
+    @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+    
+    .cabinfont {
+    font-family: "Cabin", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  }
+
+  .pageheader::before{
+    content: "";
+    position: absolute;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    display: block;
+    background-image: linear-gradient(transparent 80%, aqua, #9700ff);
+  }
+
+   .pageheader {
+    position: relative;
+    font-family: "Cabin", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #9700ff;
+    border-top: 2px solid aqua;
+    background-image: conic-gradient( #9700ff, aqua, #9700ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.1em;
+   }
+
+   .product {
+      box-shadow: inset 0px 0px 5px 5px #000000;
+      --angle: 0deg;
+      border: .2em solid; 
+      border-image: conic-gradient(from var(--angle),  #9700ff, aqua, blue, #9700ff) 1; 
+   }
+
+   .logo {
+    background-image: conic-gradient( #9700ff, aqua, blue, #9700ff);
+    background-size: cover;
+    padding: 10px;
+    border-radius: 50px;  
+    backgound-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+   }
+
+   .microfy {
+    color: black;
+    font-family: "Cabin", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 3.5vh;
+    font-weight: 700;
+   }
