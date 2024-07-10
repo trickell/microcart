@@ -86,13 +86,14 @@ function TailwindNavbar() {
         </li>
       </ul>
     </div>
-    
-  </div>
-  <div className="searchaf">
+    <div className="searchaf">
       <input type="text" placeholder="Search" className="searchbar">
       </input>
-  </div>
-</nav>
+    </div>
+    </div>
+  </nav>
+ 
+  
 
     )
 }
