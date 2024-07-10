@@ -4,10 +4,38 @@ body {
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: black;
+  
     color: white;
     display: flex;
     justify-content: space-evenly;
+    background-color: black; 
+  }
+
+
+  body::after {
+    content: "";
+    position: fixed;
+    z-index: -1;
+    bottom: -600;
+    left: -600;
+    width: 300%;
+    height: 300%;
+    background-size: cover;
+    background-position: center;
+    background-image: conic-gradient( #9700ff, black, blue, #9700ff);
+    background-size: cover;
+    animation: spin 10s linear infinite;
+
+
+   
+  
+  }
+   
+  
+
+  @keyframes spin{
+    from{transform:rotate(0deg)}
+    to{transform:rotate(360deg)}	
   }
   
   .container {
@@ -166,9 +194,7 @@ body {
    }
 
   .main-box,
-  .login
-  
-  {
+  .login {
     background-color: rgba(0,0,0,.75);
     border-radius: 50px;
     padding: 25px; 
@@ -289,19 +315,14 @@ body {
       margin-top: 20px;
       margin-bottom: 20px;
       display: flex;
-
-
       justify-content: center;
     }
 
-    .userpic {
-      height: 250px;
-      width: 250px;
-      color: #fff;
-      background-color: #9700ff;
-      border-radius: 50px;
-      margin-right: 20px;
-    }
+
+    /* =======================
+    PROFILE PAGE STYLING
+    =======================*/
+
 
     .information,
     .favorites {
@@ -318,7 +339,7 @@ body {
     .profile_wrapper {
       display: flex;
       flex-direction: row;
-      flex-wrap: no-wrap;
+      flex-wrap: wrap;
       align-items: center;
       padding: 10px;
       justify-content: space-evenly;
@@ -345,3 +366,40 @@ body {
       background-color: gray;
       margin: 10px;
     }
+
+    .profile_pic {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 25px;
+      justify-content: space-evenly;
+      margin: 20px;
+      border: 1px solid #9700ff;
+      border-radius: 50px;
+      height: 250px;
+      width: 250px;
+    }
+
+  /* =======================
+  FILE UPLOAD BUTTON 
+  =======================*/
+  input[type="file"]::file-selector-button {
+    padding: 0 16px;
+    height: 40px;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: inset 0px 0px 5px 5px #000000;
+    --angle: 0deg;
+    border: 3px solid; 
+    border-image: conic-gradient(from var(--angle),  #9700ff, aqua, blue, #9700ff) 1; 
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+    margin-right: 16px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-family: "cabin", sans-serif;
+    color: black;
+  }
+
+
+  

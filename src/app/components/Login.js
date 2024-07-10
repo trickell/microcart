@@ -19,14 +19,14 @@ function Login() {
               type="text"
               className="email"
               id="login"
-              placeholder="Enter email" />
+              placeholder="email" />
           </div>
           <div>
             <input
               type="text"
               className="password"
               id="password"
-              placeholder="Enter password"/>
+              placeholder="password"/>
           </div> 
           <div> 
             <button className="login-btn">
