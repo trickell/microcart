@@ -18,7 +18,16 @@ export default function Profile () {
                     <p>Socials</p>
                 </div>
             </div>
-            <div className="favorites">This is where the favorites can be reviewed</div>
+            <div className="favorites">This is where the favorites can be reviewed
+            <div>
+                <div className="placeholderbox">This is a placeholder for the favorites</div>
+                <div className="placeholderbox">This is a placeholder for the favorites</div>
+                <div className="placeholderbox">This is a placeholder for the favorites</div>
+                <div className="placeholderbox">This is a placeholder for the favorites</div>
+                <div className="placeholderbox">This is a placeholder for the favorites</div>
+            </div>
+            
+            </div>
 
             {/* Profile content goes here */}   
             {/* Theme picker to load after clicking a "change theme" button... */}

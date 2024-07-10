@@ -303,7 +303,8 @@ body {
       margin-right: 20px;
     }
 
-    .information {
+    .information,
+    .favorites {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
@@ -326,9 +327,9 @@ body {
       border-radius: 50px;
     }
 
-    .favorites {
+    .about {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       flex-wrap: wrap;
       align-items: center;
       padding: 10px;
@@ -336,4 +337,11 @@ body {
       margin: 20px;
       border: 1px solid #9700ff;
       border-radius: 50px;
+    }
+
+    .placeholderbox{
+      height: 100px;
+      width: 100px;
+      background-color: gray;
+      margin: 10px;
     }
