@@ -22,6 +22,7 @@ function BtnType(props){
             return <button type="button" onClick={() => {
                 form.submit();
             }}>Submit</button>;
+        
         default:
             return null;
     }    

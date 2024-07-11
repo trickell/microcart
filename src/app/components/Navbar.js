@@ -51,7 +51,7 @@ export default Navbar;
 function TailwindNavbar() {
     return (
 
-<nav class="gray-200 bg-black">
+<nav class="gray-200 bg-black/85 backdrop-blur-med nav-container shadow-lg">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
   <Link href={paths.home()} class="logo flex items-center space-x-3 rtl:space-x-reverse">
        

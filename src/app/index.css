@@ -77,26 +77,29 @@ body {
     padding-top: 20px;
   }
   
-  .navbar {
-    display: flex;
-    justify-content: space-evenly;
-    background-color: lime;
-    border-radius: 50px;
-  }
-  
-  .searchbar,
-  .email,
-  .password {
+  /* .nav-container {
+    background-image: linear-gradient(to left, transparent, #9700ff, transparent);
+  } */
+ 
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
     background-image: linear-gradient(#9700ff, transparent);
     display: flex;
-    padding:5px;
+    padding: 10px 8px;
     margin:5px;
     border-radius: 50px;
-    color: black;
+    color: #ddd;
     display: flex;
     background-color: #02218a;
     box-shadow: inset 2px 3px 20px 5px #000000;
     border: 2px solid #9700ff;
+  }
+
+  /* Wizard page alignment for labels */
+  #wizard label {
+    width: 16rem;
+    text-align: right;
   }
   
   .searchaf {
@@ -199,6 +202,10 @@ body {
     align-items: center;
   }
 
+  .login {
+    padding: 15px;
+  }
+
   input
    {
     font-size: 1.2em;
@@ -212,6 +219,7 @@ body {
     align-items: center;
     padding: 10px;
   }
+
   .login-wrapper,
   .Signup {
     display: flex;
@@ -220,7 +228,8 @@ body {
     padding: 10px;
     justify-content: space-evenly;
   }
-  .login-btn
+  .login-btn,
+  form#wizard button
     {
     font-size: 1.2em;
     font-weight: bold;
@@ -240,11 +249,14 @@ body {
   }
 
   .login-btn:hover,
+  form#wizard button:hover,
   .signup-btn:hover {
-   
     box-shadow: inset 0px 0px 5px 5px #000000;
   }
-
+  form#wizard button {
+    display: flex;
+    flex-direction: row;
+  }
 
 
   a,
