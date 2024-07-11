@@ -3,18 +3,21 @@ import Header from './components/Header';
 import "./globals.css";
 import "./index.css";
 
+
+
+
 const RootLayout = ({children}) => {
   return (
       <html>
       
         <body>
-          <div>
-
+      
+        <div>
           <Header/>
           {children}
-          
-          
         </div>
+          
+        
         </body>
       </html>
         

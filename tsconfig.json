@@ -20,10 +20,11 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "forceConsistentCasingInFileNames": true
   },
   "include": [
-    "next-env.d.ts",
+    "public/next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"

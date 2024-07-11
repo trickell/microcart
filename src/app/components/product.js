@@ -23,7 +23,7 @@ const Product = () => {
                 return (
                     <div className="product basis-1/5 md:basis-1/6 m-5 lg:m-2 bg-gray-700 shadow-2xl hover-lime rounded overlow-hidden p-10" key={prod.id}>
                         <a href="#" key={prod.id}> 
-                            <div className="flex justify-center items-center bg-green-600">
+                            <div className="flex justify-center items-center product-img">
                                 <div className="w-full max-w-lg p-4">
                                     <Image className="w-9/10 mx-auto rounded-full" layout="responsive" width={100} height={100} src={prod.thumbnailUrl} alt={prod.title} />
                             </div>
