@@ -36,7 +36,7 @@ export default function Profile () {
     return (
         <div>
             <h1 className="pageheader">Profile</h1>
-            <div className="profile_wrapper">
+            <div className="profile_wrapper login">
                 <div className="userpic searchbar">
                     <div className="profile_pic login">
                         <Image className="product product-img" 
@@ -45,25 +45,19 @@ export default function Profile () {
                             height="300" 
                             width="300" />Mr. Bojangles {/* this will be usernames */}
                     </div>
-
-                    
                 </div>
-
                 <div>
-                        <h3>Update you profile pic</h3>
-                        <form onSubmit={uploadFile}>
-                                <input type="file" ref={fileInput} name="Choose a new picture"/>
-                                <button type="button" className="nav">Upload</button>
-                            </form>
-                    </div>
-
-                    {/* <div>
-                        Users will fill out a form and it will display here.
-                        <p>Company contact information</p>
-                        <p>Bio</p>
-                        <p>Socials</p>
-                    </div> */}
-
+                  <h3 className="cabinfont login-btn">Update you profile pic</h3>
+                  <div className="pic_box searchbar">
+                    <form onSubmit={uploadFile} className="change_pic">
+                      <div className="buttonaf">
+                            <input type="file" ref={fileInput} id="profile_pic_upload" />
+                            <label htmlFor="profile_pic_upload" >Choose a file</label>
+                            <button type="button" id="pp_upload">Upload</button>
+                      </div>
+                    </form>
+                  </div> 
+                </div>     
             </div>
                 
     
