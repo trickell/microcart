@@ -4,11 +4,11 @@ body {
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  
     color: white;
     display: flex;
     justify-content: space-evenly;
     background-color: black; 
+
   }
 
   body::after {
@@ -34,7 +34,16 @@ body {
   .container {
     max-width: 1024px;
     margin: 0 auto;
+    
   }
+
+  .header_area {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    flex-direction: column;
+  }
+
 
   /* ================
    TOP AND NAVBAR ======================================================
@@ -71,18 +80,7 @@ body {
     letter-spacing: 0.1em;
    }
 
-  .top {
-    display: flex;
-    justify-content: space-evenly;
-    padding-top: 20px;
-  }
-  
-  .navbar {
-    display: flex;
-    justify-content: space-evenly;
-    background-color: lime;
-    border-radius: 50px;
-  }
+
   
   .searchbar,
   .email,
@@ -98,12 +96,11 @@ body {
     box-shadow: inset 2px 3px 20px 5px #000000;
     border: 2px solid #9700ff;
   }
-  
-  .searchaf {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-  }
+
+  #searchbar {
+    align-self: flex-end;
+    margin-bottom: 20px;
+   }
   
   .nav {
     color: #9700ff;
@@ -131,17 +128,19 @@ body {
     border-radius: 50px; 
   }
 
-
   /* ================
    HOME PAGE STUFF ==============================================================
   ================ */
   .microfy-home {
     margin-bottom: 50px;
-    padding: 50px;
+    padding-top: 50px;
     border-top: 1px solid aqua;
     border-radius: 50px;
     display: flex;
-  
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #02218a;
+    width: 80vw;
   }
   
 /* Sections are the main divs for the the intro, login, and signup areas */
@@ -177,6 +176,46 @@ body {
     font-size: 3.5vh;
     font-weight: 700;
    }
+
+   .searchbar {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+   }
+
+    /* =======================
+  DEMO SECTION - FRONT PAGE
+  =======================*/
+
+  .demo_area {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 5px;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+    border-radius: 50px;
+    min-width: 250px;
+    
+  }
+
+  .demo,
+  .wizard {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-evenly;
+    margin: 20px;
+    border-bottom: 1px solid #9700ff;
+    border-radius: 50px;
+    height: 20vh;
+    width: 30vh;
+    padding: 20px;
+    background-image: linear-gradient( #9700ff, transparent, transparent);
+  }
 
    .homecontent {
     displays: flex;
@@ -244,8 +283,6 @@ body {
    
     box-shadow: inset 0px 0px 5px 5px #000000;
   }
-
-
 
   a,
   a:hover,
@@ -341,6 +378,25 @@ body {
       border-radius: 50px;
     }
 
+    .pic_box{
+      width: 300px;
+      height: 210px;
+      margin-top: 10px;
+    }
+
+    change_pic {
+      display: flex;
+      flex-direction: column;
+      margin: 20px;
+      border: 1px solid #9700ff;
+      border-radius: 50px;
+     }
+
+    .upload_btn {
+    margin-left: 100px;
+    padding-bottom: 50px;
+     }
+
     .about {
       display: flex;
       flex-direction: column;
@@ -377,22 +433,32 @@ body {
   /* =======================
   FILE UPLOAD BUTTON 
   =======================*/
-  input[type="file"]::file-selector-button {
-    padding: 0 16px;
+
+    input[type="file"] {
+      opacity: 0;
+    }
+
+    #pp_upload {
+    display: block;
+    width: 80px;
     height: 40px;
     cursor: pointer;
     background-color: white;
     box-shadow: inset 0px 0px 5px 5px #000000;
-    --angle: 0deg;
-    border: 3px solid; 
-    border-image: conic-gradient(from var(--angle),  #9700ff, aqua, blue, #9700ff) 1; 
-    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
-    margin-right: 16px;
-    margin-top: 30px;
-    margin-bottom: 30px;
     font-family: "cabin", sans-serif;
     color: black;
+    border-radius: 50px;
+    background-image: linear-gradient(#9700ff, aqua, blue, #9700ff);  
   }
 
+    .buttonaf {
+    display: flex;
+    flex-direction: column;
 
-  
+    align-items: center;
+    padding: 10px;
+    justify-content: space-evenly;
+    margin: 20px;
+
+    max-width: 250px;
+  }
