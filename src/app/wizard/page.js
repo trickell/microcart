@@ -21,10 +21,10 @@ export default function Wizard() {
                     </div>
                 </div>
                 <div id="page3" className="flex-col hidden">
-                    <Input label="username" type="text" id="name" placeholder="Your Admin Username" />
-                    <Input label="password" type="password" id="email" placeholder="Password" />
-                    <Input label="confirm Pass" type="password" id="confirm-password" placeholder="Confirm Password"/>
-                    <Input label="email" type="email" id="email" placeholder="Email" />
+                    <Input label="username" type="text" id="name" placeholder="Your Admin Username" validate={['required']} />
+                    <Input label="password" type="password" id="password" placeholder="Password" validate={['required','password']} />
+                    <Input label="confirm Pass" type="password" id="confirm-password" placeholder="Confirm Password" validate={['required','confirmPass']} />
+                    <Input label="email" type="email" id="email" placeholder="Email" validate={['required','email']} />
                     <div className="flex flex-row">
                         <BtnType type="back" showID="page2" hideID="page3" />
                         <BtnType type="next" showID="page4" hideID="page3" />

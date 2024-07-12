@@ -19,14 +19,17 @@ function BtnType(props){
             }}>Continue</button>;
 
         case 'submit':
-            return <button type="button" onClick={() => {
-                form.submit();
+            return <button type="button" onClick={(e) => {
+                e.target.form.submit(()=> {
+                    e.preventDefault();
+                    console.log("made it!");
+                });
             }}>Submit</button>;
         
         default:
             return null;
     }    
-
+  
 }
 
 export default BtnType;
