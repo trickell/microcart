@@ -1,23 +1,69 @@
 'use client'
-export default function ThemePicker() {
-    return (
-        <div className="container">
-        <h1 className="title_theme_picker">Theme Picker - toggled on</h1>
-        <div className="theme_selections">
-            
-            <button className="themebutton" onClick={() => document.body.classList.toggle('dark-theme')}>Toggle Dark Theme</button>
-            <button className="themebutton" onClick={() => document.body.classList.toggle('light-theme')}>Toggle Light Theme</button>
-            <button className="themebutton" onClick={() => document.body.classList.toggle('green-theme')}>Toggle Green Theme</button>
-            <button className="themebutton" onClick={() => document.body.classList.toggle('red-theme')}>Toggle Red Theme</button>
-            <button className="themebutton" onClick={() => document.body.classList.toggle('blue-theme')}>Toggle Blue Theme</button>
-            <button className="themebutton" onClick={() => document.body.classList.toggle('purple-theme')}>Toggle Purple Theme</button>
-            <button className="themebutton" onClick={() => document.body.classList.toggle('pink-theme')}>Toggle Pink Theme</button>
-            <button className="themebutton" onClick={() => document.body.classList.toggle('orange-theme')}>Toggle Orange Theme</button>
-            <button className="themebutton" onClick={() => document.body.classList.toggle('yellow-theme')}>Toggle Yellow Theme</button>
-            <button className="themebutton" onClick={() => document.body.classList.toggle('rainbow-theme')}>Toggle Teal Theme</button>
-            <button className="themebutton" onClick={() => document.body.classList.toggle('space-theme')}>Toggle Black Theme</button>
-            <button className="themebutton" onClick={() => document.body.classList.toggle('natural-theme')}>Toggle Metal Theme</button>
-        </div>
-    </div>
-    )
-}
+import React, {useState, useLayoutEffect} from 'react';
+import "slider-color-picker";
+
+ function Droptheme () {
+    const themes = [
+        { key:1, value: "Light Theme",  src:"template/theme.css"},
+        { key:2, value: "Dark Theme",  src:"template/darkTheme.css"},
+        { key:3, value: "Custom Theme",  src:"template/customTheme.css"}
+        // add more themes as needed, css styles will be linked to the selected theme file
+      ]
+
+    let [theme, setTheme] = useState("Select Theme");
+
+    let handleThemeChange = (e) => {
+        setTheme(e.target.value);
+    }
+
+    // color picker-mabobber-------------
+
+    const ref = React.useRef();
+    const [color, setColor] = useState("#ff0000");
+
+    const onColorChange = (event) => {
+        setColor(event.target.value);
+    };
+
+    useLayoutEffect(() => {
+        ref.current.addEventListener("change", onColorChange);
+    }, [ref]);
+
+
+        return (
+        <div className="theme_picker">
+            <div>
+                <div>
+                    {theme}
+                    <br />
+                    <select onChange={handleThemeChange} className="login">
+                        <option value="Select Theme">Select Theme</option>
+                        {themes.map((theme) => <option key={theme.key} value={theme.value} className="nav">{theme.value}</option>)}
+                    </select>
+                </div>
+                <div>
+                    {theme}
+                    <br />
+                    <select onChange={handleThemeChange} className="login">
+                        <option value="Select Theme">Select Component</option>
+                        {themes.map((theme) => <option key={theme.key} value={theme.value} className="nav">{theme.value}</option>)}
+                    </select>
+                </div>
+            </div>
+
+
+            <div>
+                <slider-color-picker
+                ref={ref}
+                onChange={onColorChange}
+                ></slider-color-picker>
+            </div>
+            <div id="preview" style={{ background: color }}>
+
+            </div>
+            </div>
+       
+        )
+    }
+
+export default Droptheme;
