@@ -33,7 +33,7 @@ export default function ProfileUser () {
     return (
         <div>
             <h1 className="pageheader">Profile</h1>
-            <div className="profile_wrapper login">
+            <div className="profile_wrapper">
                 <div className="userpic searchbar">
                     <div className="profile_pic login">
                         <Image className="product product-img" 
@@ -58,18 +58,18 @@ export default function ProfileUser () {
             </div>
             
             <div className="favorites">This is where the favorites can be reviewed
-              <div>
-                  <div className="placeholderbox">This is a placeholder for the favorites</div>
-                  <div className="placeholderbox">This is a placeholder for the favorites</div>
+              <div className="favorites2">
                   <div className="placeholderbox">This is a placeholder for the favorites</div>
                   <div className="placeholderbox">This is a placeholder for the favorites</div>
                   <div className="placeholderbox">This is a placeholder for the favorites</div>
               </div>
             </div> 
+           
+              <div className="theme_picker_container">
+                <h1>Change Theme</h1>
+                <Droptheme /> 
+              </div>
             
-        <div className="theme_picker">
-          <Droptheme />  {/* Added the ThemePicker component here */}
-        </div>
     </div>
     )
 }
