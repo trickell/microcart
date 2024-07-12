@@ -8,7 +8,7 @@ export default function Wizard() {
             <h1>Generate Your New Shopping Cart Experience</h1>
             <form className="flex gap-4 flex-col cabinfont" id="wizard">
                 <div id="first">
-                    <Input label="shopName" type="text" id="shop-name" placeholder="Shop Name" />
+                    <Input label="shopName" type="text" id="shop-name" placeholder="Shop Name" validate={['required']} />
                     <Input label="shopUrl" type="text" id="shop-url" placeholder="Shop URL" />
                     <BtnType type="next" showID="page2" hideID="first" />
                 </div>
@@ -31,12 +31,14 @@ export default function Wizard() {
                     </div>
                 </div>
                 <div id="page4" className="hidden">
-                    <label htmlFor="wz_products" className="px-8 py-3 m-10 bg-slate-900 rounded-xl box-shadow-xl hover:cursor-pointer">
-                        Upload Products CSV File
-                    </label>
-                    <input className="opacity-0" type="file" id="wz_products" accept=".csv"></input>
+                    <div className="flex flex-row gap-4 my-5">
+                        <label htmlFor="wz_products" className="flex px-8 py-3 bg-slate-900 rounded-xl box-shadow-xl hover:cursor-pointer">
+                            Upload Products CSV 
+                        </label>
+                        <input className="opacity-0" type="file" id="wz_products" accept=".csv"></input>
+                    </div>
                     <div className="flex flex-row justify-self">
-                        <a href="#" download="products.csv">Download Template Products CSV</a>
+                        <a className="px-10 text-blue-500 text-shadow underline font-light pb-5" href="#" download="products.csv">Download Template Products CSV</a>
                         <span>Please use the CSV template making sure to include all required values.</span>
                     </div>
                     <div className="flex flex-row">

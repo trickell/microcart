@@ -99,6 +99,7 @@ body {
     background-image: linear-gradient(#9700ff, transparent);
     display: flex;
     padding: 10px 8px;
+    padding-left: 15px;
     margin:5px;
     border-radius: 50px;
     color: #ddd;
@@ -107,6 +108,7 @@ body {
     box-shadow: inset 2px 3px 20px 5px #000000;
     border: 2px solid #9700ff;
   }
+  .input-error{ border: 2px solid red !important; }
 
   /* Wizard page alignment for labels */
   #wizard label {
@@ -310,6 +312,7 @@ body {
     display: flex;
     flex-direction: row;
   }
+  form#wizard .login { margin: 5px 0px; }
 
 
   a,
@@ -502,6 +505,7 @@ body {
     max-width: 250px;
   }
 
+
   .theme_picker {
     display: flex;
     flex-direction: row;
@@ -525,5 +529,12 @@ body {
     height: 100px;
     border-radius: 25px;
  
+  }
+
+
+
+  /** Text Shadow **/
+  .text-shadow {
+    text-shadow: 2px 2px 2px #000000;
   }
 
