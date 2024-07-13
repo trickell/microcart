@@ -1,4 +1,3 @@
-
 "use client"
 import React from'react';
 // import ProfileBusiness from '.ProfileBusiness';
@@ -32,7 +31,7 @@ export default function ProfileUser () {
 
     return (
         <div>
-            <h1 className="pageheader">Profile</h1>
+            <h1 className="pageheader">Profile - Dashboard</h1>
             <div className="profile_wrapper">
                 <div className="userpic searchbar">
                     <div className="profile_pic login">
@@ -44,10 +43,11 @@ export default function ProfileUser () {
                     </div>
                 </div>
                 <div>
-                  <h3 className="cabinfont login-btn">Update you profile pic</h3>
+                  
                   <div className="pic_box searchbar">
                     <form onSubmit={uploadFile} className="change_pic">
                       <div className="buttonaf">
+                            <h3 className="cabinfont">Change User Icon</h3>
                             <input type="file" ref={fileInput} id="profile_pic_upload" />
                             <label htmlFor="profile_pic_upload" >Choose a file</label>
                             <button type="button" id="pp_upload">Upload</button>
@@ -57,16 +57,21 @@ export default function ProfileUser () {
                 </div>     
             </div>
             
-            <div className="favorites">This is where the favorites can be reviewed
+            <div className="favorites">Currently watching Area. Follow businesses/users/items.
               <div className="favorites2">
-                  <div className="placeholderbox">This is a placeholder for the favorites</div>
-                  <div className="placeholderbox">This is a placeholder for the favorites</div>
-                  <div className="placeholderbox">This is a placeholder for the favorites</div>
+                  <div className="placeholderbox">Awesome Hoodie $50
+                  <p>Seller: ABC Store</p>
+                  </div>
+                  <div className="placeholderbox">Refurbished Macbook $1000
+                  <p>Seller: 123 Company</p>
+                  </div>
+                  <div className="placeholderbox">Silver Paint $15
+                  <p>Seller: Art Supplies Plus</p></div>
               </div>
             </div> 
            
               <div className="theme_picker_container">
-                <h1>Change Theme</h1>
+                <h1 className="theme_area_header">Micro <span className="fancy">Styler</span></h1>
                 <Droptheme /> 
               </div>
             
