@@ -9,12 +9,20 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@adobe/react-spectrum": "^3.35.1",
+    "@react-spectrum/color": "^3.0.0-beta.34",
+    "@react-spectrum/slider": "^3.6.9",
+    "@react-stately/color": "^3.6.1",
     "babel": "^6.23.0",
+    "compass": "^0.1.1",
+    "css3": "^0.0.1",
     "multer": "^1.4.5-lts.1",
     "next": "^14.2.4",
-    "react": "^18",
-    "react-dom": "^18",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-select": "^5.8.0",
+    "sass": "^1.77.8",
+    "scss": "^0.2.4",
     "slider-color-picker": "^0.2.3"
   },
   "devDependencies": {
