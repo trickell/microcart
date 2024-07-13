@@ -13,6 +13,9 @@ const paths = {
     },
     about() {
         return '/about';
+    },
+    wizard() {
+        return '/wizard';
     }
 }
 
