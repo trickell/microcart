@@ -2,9 +2,15 @@ import pg from 'pg';
 import { Sequelize } from 'sequelize';
 
 // Initialize Sequelize with our PostgreSQL database
-let seq = new Sequelize('postgres://localhost:5432/microcart', 
-{ 
+// let seq = new Sequelize('postgres://localhost:5432/microcart                                                                ', 
+// { 
+//     dialectModule: pg,
+// });
+const seq = new Sequelize('microcart', 'microcart_dev', 'redAPPLE123+', {
+    host: 'localhost',
+    dialect: 'postgres',
     dialectModule: pg,
+    schema: 'dev'
 });
 
 // Test the connection to make sure it went well.

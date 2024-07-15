@@ -8,7 +8,7 @@ and determine the user data we send to the client.
 import seq from '../dbconnect';
 import { Sequelize } from 'sequelize';
 
-const User = seq.define('User', {
+const User = seq.define('user', {
     id: {
         field: 'id',
         type: Sequelize.INTEGER,
@@ -24,7 +24,7 @@ const User = seq.define('User', {
         'type': Sequelize.STRING
     },
     email: {
-        field: 'name',
+        field: 'email',
         'type': Sequelize.STRING
     },
     created: {
@@ -33,7 +33,8 @@ const User = seq.define('User', {
     }
 
 }, {
-    timestamps: true,
+    timestamps: false,
+    freezeTableName: true
 });
 
 export default User;
