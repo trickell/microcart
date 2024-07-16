@@ -67,7 +67,9 @@ function TailwindNavbar() {
 
 
     <div class="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
-      <ul class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
+      <ul class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 
+      rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 
+      md:dark:bg-transparent dark:border-gray-700">
         <li>
         <Link href={paths.profile()} className="nav">Profile</Link>
         </li>
@@ -82,6 +84,10 @@ function TailwindNavbar() {
 
         <li>
         <Link href={paths.about()} className="nav">About</Link>
+        </li>
+        <li>
+          <input type="text" placeholder="Search" className="searchbar" id="searchbar">
+          </input>
         </li>
       </ul>
     </div>

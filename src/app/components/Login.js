@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+
 function Login() {
   return (
   
@@ -35,6 +36,7 @@ function Login() {
           </div>
         </div>
       </div>
+
 
 </section>
 

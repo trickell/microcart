@@ -9,11 +9,9 @@ function Header() {
       <div className="header_area">
         <div>
           <Navbar></Navbar>
+          
         </div>
-        <div>
-          <input type="text" placeholder="Search" className="searchbar" id="searchbar">
-          </input>
-        </div>
+  
       </div>
 
       
