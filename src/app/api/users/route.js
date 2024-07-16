@@ -1,5 +1,4 @@
 import { NextResponse } from 'next/server';
-import seq from '../dbconnect'; 
 import User from '../models/user';
 import Address from '../models/address';
 import { Sequelize } from 'sequelize';
@@ -13,6 +12,7 @@ export async function GET(req){
         username: 'JohnDoe',
         email: 'johndoe@example.com'
     };
+    let userResponse = {};
 
     // Relationships for User model are defined here:
     User.hasMany(Address, {
@@ -29,41 +29,39 @@ export async function GET(req){
     if(userData.id === null) {
         // Allow a filter to happen (working on this atm)
         let filter = {};
-        if (req.nextUrl.searchParams.get('filter')) {
+        let filter_req = req.nextUrl.searchParams.get('filter');        
+
+        if (filter_req) {
             filter = {
                 where: {
                     // Gives a unique key based on the like query for usernames under that bracket (will be good for admin requests to manage users)
-                    username: { [Sequelize.Op.like]: `${req.nextUrl.searchParams.get('filter')}%` }
+                    name: { [Sequelize.Op.like]: '%'+`${filter_req}`+'%' }
                 }
             };
         }
         console.log(req.nextUrl.searchParams.get('filter'));
 
         // Get user data with sequelize and User Model
-        User.findAll(filter).then(user => {
-            console.log(user[0].dataValues);
-            userData = user[0].dataValues;
-            // The way shown on sequelize documentation (were in nextjs, will work a little differently)
-            // Response.json({
-            //     userData: user.dataValues
-            // });
-        })
+        userResponse = await User.findAll(filter);        
+        return NextResponse.json(userResponse, {
+            headers: {
+                'Set-Cookie': 'user=JohnDoe; Path=/; HttpOnly; SameSite=Strict' // Temp setting of the cookie
+            },
+            status: 200
+        });
     } 
     else {
         // If user_id exists, pull directly from that user information
-        User.findByPk(userData.id).then(user => {
-            if(user){
-                Response.json({
-                    user: user.dataValues
-                });
-            }
-            else {
-                res.status(404).send();
-            }
-        })
+        userResponse = await User.findByPk(userData.id);        
+        return NextResponse.json(userResponse, {
+            headers: {
+                'Set-Cookie': 'user=JohnDoe; Path=/; HttpOnly; SameSite=Strict' // Temp setting of the cookie
+            },
+            status: 200
+        });
     }
-
-    // Let's create some random data if createRandomData is true
+    
+    // Let's create some random data if createRandomData is true (only use to create random data in user table)
     if(req.nextUrl.searchParams.get('createRandomData') === 'true'){
         User.create({
             username: 'random_user' + Math.floor(Math.random() * 10000),
@@ -74,13 +72,6 @@ export async function GET(req){
         });
     }
 
-    // Return the user data response as JSON 
-    return NextResponse.json(userData, {
-        headers: {
-            'Set-Cookie': 'user=JohnDoe; Path=/; HttpOnly; SameSite=Strict' // Temp setting of the cookie
-        },
-        status: 200
-    });
 }
 
 // This will be the POST Request from the client when a new User is being inserted
