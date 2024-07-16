@@ -330,7 +330,8 @@ body {
     --angle: 0deg;
     border: .2em solid; 
     border-image: conic-gradient(from var(--angle),  #9700ff, aqua, blue, #9700ff) 1; 
-   }
+    background-color: #02218a;
+  }
 
    .product-img {
     background-color: blue;

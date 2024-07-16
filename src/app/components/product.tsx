@@ -17,7 +17,7 @@ const Product = () => {
     }, []);
 
     return (
-        <div className="bg-gray-900 container mx-auto rounded-sm py-12 px-10 columns-3 sm:columns-4 md:columns-5 lg:columns-6 gap-5">
+        <div className="product mx-auto rounded-sm py-12 px-10 columns-3 sm:columns-4 md:columns-5 lg:columns-6 gap-5">
             {product.map((prod) => {
                 return (
                     <div className="basis-1/5 md:basis-1/6 m-5 lg:m-2 bg-gray-700 rounded-lg shadow-2xl overflow-hidden hover-lime" key={prod.id}>
