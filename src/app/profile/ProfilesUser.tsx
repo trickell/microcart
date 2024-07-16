@@ -40,7 +40,7 @@ export default function ProfileUser () {
 
     return (
         <div>
-            <h1 className="pageheader">Profile - Dashboard</h1>
+            <h1 className="pageheader">Dashboard</h1>
             <div className="profile_wrapper">
                 <div className="userpic searchbar">
                     <div className="profile_pic login">
