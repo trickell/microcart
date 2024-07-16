@@ -7,6 +7,9 @@ import Droptheme from './ThemePicker';
 import Image from 'next/image';
 
 
+
+
+
 export default function ProfileUser () {
   
         const fileInput = React.useRef();
@@ -28,6 +31,12 @@ export default function ProfileUser () {
             console.log('File upload failed');
           }
         }
+        
+// toggles open and closed the styler area 
+        const togglestyles = () => {
+          const styler = document.getElementById("styler");
+          styler.hidden = !styler.hidden;
+        };
 
     return (
         <div>
@@ -69,14 +78,17 @@ export default function ProfileUser () {
                   <p>Seller: Art Supplies Plus</p></div>
               </div>
             </div> 
-           
-              <div className="theme_picker_container">
+              
+              <button id="showStyles" className="nav" onClick={togglestyles}>Toggle Styler</button>
+              <div hidden id="styler" className="theme_picker_container">
                 <h1 className="theme_area_header">Micro <span className="fancy">Styler</span></h1>
                 <Droptheme /> 
               </div>
+              
             
     </div>
     )
 }
 
 
+    

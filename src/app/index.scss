@@ -341,127 +341,128 @@ body {
     THEME STYLE BUTTONS
     =================*/
 
-    .themebutton {
-      margin: 5px;
-      border: 1px solid #9700ff;
-      border-radius: 50px;
-      padding: 10px;
-    }
+  .themebutton {
+    margin: 5px;
+    border: 1px solid #9700ff;
+    border-radius: 50px;
+    padding: 10px;
+  }
 
-    .theme_selections {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: center;
-      padding: 10px;
-      justify-content: space-evenly;
-      margin: 5px;
-      border: 1px solid #9700ff;
-      border-radius: 50px;
-    }
+  .theme_selections {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-evenly;
+    margin: 5px;
+    border: 1px solid #9700ff;
+    border-radius: 50px;
+  }
 
-    .title_theme_picker {
-      margin-top: 20px;
-      margin-bottom: 20px;
-      display: flex;
-      justify-content: center;
+  .title_theme_picker {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
     }
 
     /* =======================
     PROFILE PAGE STYLING
-    =======================*/
+  =======================*/
 
-    .information,
-    .favorites {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      align-items: center;
-      padding: 10px;
-      justify-content: space-evenly;
-      margin: 20px;
-      border-radius: 25px;
-      background-color: #7a51ad; 
-      box-shadow: inset 0px 0px 50px 30px #000000;
-      padding: 20px 0px;
+  .information,
+  .favorites {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+    border-radius: 25px;
+    background-color: #02218a; 
+    box-shadow: 0px 0px 20px 10px #000000;
+    padding: 20px 0px;
+  }
+
+  .favorites2 {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-evenly;
+
+  }
+  .profile_wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-evenly;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    border-radius: 25px;
+    background-color: #02218a; 
+    box-shadow: 0px 0px 20px 10px #000000;
+  }
+
+  .pic_box{
+    width: 300px;
+    height: 210px;
+    margin-top: 10px;
+  }
+
+  change_pic {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    border: 1px solid #9700ff;
+    border-radius: 50px;
     }
 
-    .favorites2 {
-      display:flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: center;
-      padding: 10px;
-      justify-content: space-evenly;
-  
-    }
-    .profile_wrapper {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: center;
-      padding: 10px;
-      justify-content: space-evenly;
-      margin: 20px;
-      border-radius: 25px;
-      background-color: #7a51ad; 
-      box-shadow: 0px 0px 50px 30px #000000;
+  .upload_btn {
+  margin-left: 100px;
+  padding-bottom: 50px;
     }
 
-    .pic_box{
-      width: 300px;
-      height: 210px;
-      margin-top: 10px;
-    }
+  .about {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-evenly;
+    margin: 20px;
+    border: 1px solid #9700ff;
+    border-radius: 50px;
+  }
 
-    change_pic {
-      display: flex;
-      flex-direction: column;
-      margin: 20px;
-      border: 1px solid #9700ff;
-      border-radius: 50px;
-     }
+  .placeholderbox{
+    display: flex;
+    background-color: gray;
+    margin: 10px;
+    width: 150px;
+    max-width: 150px;
+    min-height: 200px;
+    max-width: fit-content;
+  }
 
-    .upload_btn {
-    margin-left: 100px;
-    padding-bottom: 50px;
-     }
-
-    .about {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      align-items: center;
-      padding: 10px;
-      justify-content: space-evenly;
-      margin: 20px;
-      border: 1px solid #9700ff;
-      border-radius: 50px;
-    }
-
-    .placeholderbox{
-      display: flex;
-      background-color: gray;
-      margin: 10px;
-      width: 150px;
-      max-width: 150px;
-      min-height: 200px;
-      max-width: fit-content;
-    }
-
-    .profile_pic {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: center;
-      padding: 25px;
-      justify-content: space-evenly;
-      margin: 20px;
-      border: 1px solid #9700ff;
-      border-radius: 50px;
-      height: 250px;
-      width: 250px;
-    }
+  .profile_pic {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 25px;
+    justify-content: space-evenly;
+    margin: 20px;
+    border: 1px solid #9700ff;
+    border-radius: 50px;
+    height: 250px;
+    width: 250px;
+  }
 
   /* =======================
   FILE UPLOAD BUTTON 
@@ -500,7 +501,7 @@ body {
   .theme_area_header {
     font: 'Cabin';
     font-size: 25px;
-    color: black;
+    color: rgb(255, 255, 255);
     font-weight:900;
     letter-spacing: .5rem;
     margin-top: 10px;
@@ -522,12 +523,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #7a51ad; 
-    box-shadow: 0px 0px 50px 30px #000000;
+    background-color: #02218a; 
+    box-shadow: 0px 0px 20px 10px #000000;
     border: 15px solid transparent;
     border-image: linear-gradient(-45deg, #560098, rgb(140, 0, 255), rgb(0, 76, 255), #00eaff) 20% round;
     border-top: none;
     border-bottom: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
     .preview {
@@ -562,91 +565,89 @@ body {
   =======================*/
     /* Track: webkit browsers */
 
-    input[type="range"].rgb {
-      /* removing default appearance */
-      -webkit-appearance: none;
-      appearance: none;
-      align-self: center;
-      border-radius: 16px;
-      border: 2px solid black;
-      /* creating a custom design */
-      cursor: pointer;
-      outline: none;
-      height: 25px;
-      width: 250px;
-      background: linear-gradient(to right, rgb(255, 0, 0) 0%, rgb(255, 255, 0) 17%, rgb(0, 255, 0) 33%, rgb(0, 255, 255) 50%, rgb(0, 0, 255) 67%, rgb(255, 0, 255) 83%, rgb(255, 0, 0) 100%);
-      border-radius: 16px;
-    }
-
-    /* Track: Mozilla Firefox */
-    input[type="range"].rgb::-moz-range-track {
-      height: 15px;
-      background: linear-gradient(to right, rgb(255, 0, 0) 0%, rgb(255, 255, 0) 17%, rgb(0, 255, 0) 33%, rgb(0, 255, 255) 50%, rgb(0, 0, 255) 67%, rgb(255, 0, 255) 83%, rgb(255, 0, 0) 100%);
-      border-radius: 16px;
-    }
-
-   /* Thumb: webkit */
-    input[type="range"]::-webkit-slider-thumb {
-      /* removing default appearance */
-      -webkit-appearance: none;
-      appearance: none;
-      /* creating a custom design */
-      height: 20px;
-      width: 10px;
-      background: radial-gradient(white, gray);
-      border: 2px solid black;
-      border-radius: 16px;
+  input[type="range"].rgb {
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+    align-self: center;
+    border-radius: 16px;
+    border: 2px solid black;
+    /* creating a custom design */
+    cursor: pointer;
+    outline: none;
+    height: 25px;
+    width: 250px;
+    background: linear-gradient(to right, rgb(255, 0, 0) 0%, rgb(255, 255, 0) 17%, rgb(0, 255, 0) 33%, rgb(0, 255, 255) 50%, rgb(0, 0, 255) 67%, rgb(255, 0, 255) 83%, rgb(255, 0, 0) 100%);
+    border-radius: 16px;
   }
 
-    /* =======================
-        COLOR SLIDERS - Alpha/Opacity
-  =======================*/
+  /* Track: Mozilla Firefox */
+  input[type="range"].rgb::-moz-range-track {
+    height: 15px;
+    background: linear-gradient(to right, rgb(255, 0, 0) 0%, rgb(255, 255, 0) 17%, rgb(0, 255, 0) 33%, rgb(0, 255, 255) 50%, rgb(0, 0, 255) 67%, rgb(255, 0, 255) 83%, rgb(255, 0, 0) 100%);
+    border-radius: 16px;
+  }
 
-    input[type="range"].alpha {
-      /* removing default appearance */
-      -webkit-appearance: none;
-      appearance: none;
-      /* creating a custom design */
-      width: 250px;
-      cursor: pointer;
-      outline: none;
-      height: 25px;
-      background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
-      border-radius: 16px;
-      border: 2px solid black;
-    }
+  /* Thumb: webkit */
+  input[type="range"]::-webkit-slider-thumb {
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+    /* creating a custom design */
+    height: 20px;
+    width: 10px;
+    background: radial-gradient(white, gray);
+    border: 2px solid black;
+    border-radius: 16px;
+}
 
-    /* Track: Mozilla Firefox */
-    input[type="range"].alpha::-moz-range-track {
-      height: 15px;
-      background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
-      border-radius: 16px;
-    }
+  /* =======================
+      COLOR SLIDERS - Alpha/Opacity
+=======================*/
 
-    /* =======================
-        COLOR SLIDERS - Brightness
-  =======================*/
+  input[type="range"].alpha {
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+    /* creating a custom design */
+    width: 250px;
+    cursor: pointer;
+    outline: none;
+    height: 25px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    border-radius: 16px;
+    border: 2px solid black;
+  }
 
-    input[type="range"].lightness {
-      /* removing default appearance */
-      -webkit-appearance: none;
-      appearance: none;
-      /* creating a custom design */
-      width: 250px;
-      cursor: pointer;
-      outline: none;
-      height: 25px;
-      background: linear-gradient(to right, rgba(0, 0, 0), rgba(255, 255, 255));
-      border-radius: 16px;
-      border: 2px solid black;
-    
-    }
+  /* Track: Mozilla Firefox */
+  input[type="range"].alpha::-moz-range-track {
+    height: 15px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    border-radius: 16px;
+  }
 
-    /* Track: Mozilla Firefox */
-    input[type="range"].lightness::-moz-range-track {
-      height: 15px;
-      background: linear-gradient(to right, rgba(0, 0, 0), rgba(255, 255, 255));
-      border-radius: 16px;
-    }
+  /* =======================
+      COLOR SLIDERS - Brightness
+=======================*/
 
- 
+  input[type="range"].lightness {
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+    /* creating a custom design */
+    width: 250px;
+    cursor: pointer;
+    outline: none;
+    height: 25px;
+    background: linear-gradient(to right, rgba(0, 0, 0), rgba(255, 255, 255));
+    border-radius: 16px;
+    border: 2px solid black;
+  }
+
+  /* Track: Mozilla Firefox */
+  input[type="range"].lightness::-moz-range-track {
+    height: 15px;
+    background: linear-gradient(to right, rgba(0, 0, 0), rgba(255, 255, 255));
+    border-radius: 16px;
+  }
+
