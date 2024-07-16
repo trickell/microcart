@@ -7,9 +7,6 @@ import Droptheme from './ThemePicker';
 import Image from 'next/image';
 
 
-
-
-
 export default function ProfileUser () {
   
         const fileInput = React.useRef();
@@ -51,8 +48,8 @@ export default function ProfileUser () {
                             width="300" />Mr. Bojangles {/* this will be usernames */}
                     </div>
                 </div>
-                <div>
-                  
+
+                <div>  
                   <div className="pic_box searchbar">
                     <form onSubmit={uploadFile} className="change_pic">
                       <div className="buttonaf">
@@ -66,29 +63,55 @@ export default function ProfileUser () {
                 </div>     
             </div>
             
-            <div className="favorites">Currently watching Area. Follow businesses/users/items.
-              <div className="favorites2">
-                  <div className="placeholderbox">Awesome Hoodie $50
-                  <p>Seller: ABC Store</p>
-                  </div>
-                  <div className="placeholderbox">Refurbished Macbook $1000
-                  <p>Seller: 123 Company</p>
-                  </div>
-                  <div className="placeholderbox">Silver Paint $15
-                  <p>Seller: Art Supplies Plus</p></div>
-              </div>
-            </div> 
-              
+          
+          
+          <div className="user_activities">
+            <div className="activity">
+              <h1 className="dash_titles">My orders</h1>
+              <button className="dash-btn">View</button>           
+            </div>
+
+            <div className="activity">
+              <h1 className="dash_titles">Favorite Items</h1>
+              <button className="dash-btn">View</button>             
+            </div>
+
+            <div className="activity">
+              <h1 className="dash_titles">History & Feedback</h1>
+              <button className="dash-btn">View</button>
+            </div>
+
+            <div className="activity">
+              <h1 className="dash_titles">Favorite Stores</h1>
+              <button className="dash-btn">View</button>            
+            </div>
+
+            <div className="activity">
+              <h1 className="dash_titles">Inbox</h1>
+              <button className="dash-btn">View</button>
+            </div>
+
+            <div className="activity">
+              <h1 className="dash_titles">My baskets</h1>
+              <button className="dash-btn">View</button>
+            </div>
+
+            
+          </div>
+          <div className="activity">
               <button id="showStyles" className="nav" onClick={togglestyles}>Toggle Styler</button>
               <div hidden id="styler" className="theme_picker_container">
                 <h1 className="theme_area_header">Micro <span className="fancy">Styler</span></h1>
                 <Droptheme /> 
               </div>
-              
-            
-    </div>
-    )
-}
+            </div>
+        </div>
+         
+         
+  
+    );
+} 
+
 
 
     

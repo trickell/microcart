@@ -1,13 +1,13 @@
 "use client"
 
-import ProfileUser from "./ProfilesUser";
+import DashboardUser from './DashboardUser';
 
 export default function Dashboard() {
 
   return (
     <div>
       <h1>Dashboard</h1>
-      <ProfileUser />
+      <DashboardUser />
     </div>
   )};
 
