@@ -1,22 +1,26 @@
+"use client" // temporarily until the button can be integrated into the Button.js file.
 import React from 'react';
 import Image from 'next/image';
 
-function IsLoggedin() {
-  // const handleSubmit = async e => {
-  //   e.preventDefault();
-  //   const user = { username, password };
-  //   // send the username and password to the server
-  //   const response = await axios.post(
-  //     "http://blogservice.herokuapp.com/api/login",
-  //     user
-  //   );
-  //   // set the state of the user
-  //   setUser(response.data)
-  //   // store the user in localStorage
-  //   localStorage.setItem('user', response.data)
-  //   console.log(response.data)
-  // };
+function Login() {
 
+  let handleLoginSubmit = (e) => {
+    e.preventDefault();
+    // Set username and password from form fields
+    let email = document.getElementById('login').value;
+    let password = document.getElementById('password').value;
+
+    // Make a POST request to the server to authenticate the user
+    fetch('/api/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username: email, password: password }),
+    })
+   .then((response) => response.json())
+
+  };
 
   return (
   
@@ -46,7 +50,7 @@ function IsLoggedin() {
               placeholder="password"/>
           </div> 
           <div> 
-            <button className="login-btn">
+            <button className="login-btn" onClick={handleLoginSubmit}>
             Log In  
             </button>
           </div>

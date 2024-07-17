@@ -45,7 +45,7 @@ export async function GET(req){
         userResponse = await User.findAll(filter);        
         return NextResponse.json(userResponse, {
             headers: {
-                'Set-Cookie': 'user=JohnDoe; Path=/; HttpOnly; SameSite=Strict' // Temp setting of the cookie
+                // 'Set-Cookie': 'user=JohnDoe; Path=/; HttpOnly; SameSite=Strict' // Temp setting of the cookie
             },
             status: 200
         });
@@ -82,4 +82,9 @@ export async function POST(req){
     console.log(formData);
 
     return NextResponse.json({ message: 'Form submitted successfully', status: 200 });
+}
+
+// If a user needs to update information such as password / email / etc, it should route to this method.
+export async function UPDATE(req){
+
 }
