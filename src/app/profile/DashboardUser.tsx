@@ -1,9 +1,6 @@
 "use client"
 import React from'react';
-// import ProfileBusiness from '.ProfileBusiness';
-// import ProfileUser from './ProfileUser';
 import Droptheme from './ThemePicker';
-
 import Image from 'next/image';
 
 
@@ -56,7 +53,7 @@ export default function ProfileUser () {
                             <h3 className="cabinfont">Change User Icon</h3>
                             <input type="file" ref={fileInput} id="profile_pic_upload" />
                             <label htmlFor="profile_pic_upload" >Choose a file</label>
-                            <button type="button" id="pp_upload">Upload</button>
+                            <button type="button" className="dash-btn" id="pp_upload">Upload</button>
                       </div>
                     </form>
                   </div> 
