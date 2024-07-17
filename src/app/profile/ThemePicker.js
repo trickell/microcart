@@ -8,9 +8,9 @@ import ColorOptionSlider from './ColorSliders';
 
  function Droptheme ({ onChange }) {
     const themes = [
-        { key:1, value: "Light Theme",  src:"template/theme.css"},
-        { key:2, value: "Dark Theme",  src:"template/darkTheme.css"},
-        { key:3, value: "Custom Theme",  src:"template/customTheme.css"}
+        { key:1, value: "Pastel Theme",  src:"themes/pastel.scss"},
+        { key:2, value: "Gray Theme",  src:"themes/graytones.scss"},
+
         // add more themes as needed, css styles will be linked to the selected theme file
       ]
 

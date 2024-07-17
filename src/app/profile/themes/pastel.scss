@@ -1,0 +1,518 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+
+
+body {
+    margin: 0 auto;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black; 
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    z-index: -1;
+    bottom: -600;
+    left: -600;
+    width: 300%;
+    height: 300%;
+    background-size: cover;
+    background-position: center;
+    background-image: conic-gradient(white, rgb(136, 221, 255), rgb(153, 255, 154), rgb(252, 255, 162), white);
+    background-size: cover;
+    animation: spin 10s linear infinite;
+  }
+   
+  @keyframes spin{
+    from{transform:rotate(0deg)}
+    to{transform:rotate(360deg)}	
+  }
+  
+  .container {
+    max-width: 1024px;
+
+  }
+
+  .header_area {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(153, 255, 154);
+    flex-direction: column;
+  }
+
+  /* ================
+   TOP AND NAVBAR ======================================================
+  ================ */
+  .pageheader::before {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    display: block;
+    background-image: linear-gradient(transparent 80%, white, rgb(136, 221, 255) );
+  }
+
+   .pageheader {
+    position: relative;
+    font-family: "Cabin", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(153, 255, 154);
+    border-top: 2px solid rgb(252, 255, 162);
+    background-image: conic-gradient( rgb(248, 254, 68), rgb(40, 193, 254), rgb(63, 253, 66), rgb(248, 254, 68));
+    color: black;
+    letter-spacing: 0.1em;
+   }
+
+  .top {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 20px;
+  }
+ 
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    background-image: linear-gradient(rgb(252, 255, 162), transparent);
+    display: flex;
+    padding: 10px 8px;
+    padding-left: 15px;
+    margin:5px;
+    border-radius: 50px;
+    color: #ddd;
+    display: flex;
+    background-color: rgb(153, 255, 154);
+    box-shadow: inset 2px 3px 20px 5px rgb(51, 183, 53);;
+    border: 2px solid rgb(136, 221, 255);
+  }
+  .input-error{ border: 2px solid red !important; }
+
+  .nav {
+    color: rgb(40, 193, 254);
+    box-shadow: inset 0px 0px 5px 0px rgb(40, 193, 254);
+    border-radius: 50px;
+    padding: 10px 8px;
+    border: 1px solid rgb(153, 255, 154);
+    border-top: 2px solid rgb(252, 255, 162);
+    background-image: conic-gradient(rgb(252, 255, 162), rgb(40, 193, 254), rgb(252, 255, 162));
+    color: black;
+    letter-spacing: 0.1em;
+  }
+
+  .nav:hover {
+    box-shadow: 0px 0px 10px 0px #ffffff;
+  }
+
+  .search-btn {
+    padding: 10px;
+  }
+  
+  .nav-list {
+    display: flex;
+    border-radius: 50px; 
+  }
+
+  /* ================
+   HOME PAGE STUFF ==============================================================
+  ================ */
+
+  
+/* Sections are the main divs for the the intro, login, and signup areas */
+  section {
+    background-image: radial-gradient(transparent,rgb(153, 255, 154),rgb(136, 221, 255));
+    font-size: 1.5em;
+    padding: 5px;
+    margin: 20px;
+    border-radius: 50px;
+    border: 3 px solid;
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    font-family: "Cabin", sans-serif;
+    margin-top: 30px;
+ 
+  }
+  
+  .logo {
+    background-image: linear-gradient( #9700ff, aqua, blue, #9700ff);
+    background-size: cover;
+    padding: 10px;
+    border-radius: 50px;  
+    backgound-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+   }
+
+   .microfy {
+    color: black;
+    font-family: "Cabin", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 3.5vh;
+    font-weight: 700;
+   }
+
+
+  input
+   {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+
+  a,
+  a:hover,
+  a:focus,
+  a:active {
+    text-decoration: none;
+    color: inherit;
+  }
+
+    /* SPECIAL FONTS */
+
+    .cabinfont {
+    font-family: "Cabin", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  }
+
+  /* ===========================
+  PRODCT PAGE AND PRODUCT STYLING ====================================
+  ==============================*/
+   .product {
+    box-shadow: inset 0px 0px 5px 5px #000000;
+    --angle: 0deg;
+    border: .2em solid; 
+    border-image: conic-gradient(from var(--angle), rgb(136, 221, 255), rgb(153, 255, 154), rgb(252, 255, 162), rgb(153, 255, 154), rgb(136, 221, 255)) 1; 
+    background-color: rgb(136, 221, 255);
+  }
+
+   .product-img {
+    background-color: rgb(136, 221, 255);
+    border-radius: 5px;
+   }
+
+   /*================
+    THEME STYLE BUTTONS
+    =================*/
+
+  .themebutton {
+    margin: 5px;
+    border: 1px solid #9700ff;
+    border-radius: 50px;
+    padding: 10px;
+  }
+
+  .theme_selections {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-evenly;
+    margin: 5px;
+    border: 1px solid rgb(136, 221, 255);
+    border-radius: 50px;
+  }
+
+  .title_theme_picker {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    }
+
+    /* =======================
+    PROFILE PAGE STYLING
+  =======================*/
+
+  .information,
+  .activity  {
+    display: flex; 
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 25px;
+    background-color: rgb(136, 221, 255); 
+    box-shadow: 0px 0px 20px 5px rgb(51, 183, 53);
+    padding: 40px;
+    margin: 30px;
+    color: black;
+  }
+
+  .user_activities{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  * > .activity {
+    padding: 50px;
+    flex: 1;
+    flex-direction: column;
+  }
+
+  .profile_wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-evenly;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    border-radius: 25px;
+    background-color: rgb(136, 221, 255); 
+    box-shadow: 0px 0px 20px 10px rgb(51, 183, 53);
+    color: black;
+  }
+
+  .dash_titles {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: .2rem;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .pic_box{
+    width: 300px;
+    height: 210px;
+    margin-top: 10px;
+  }
+
+  .about {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-evenly;
+    margin: 20px;
+    border: 1px solid #ffffff;
+    border-radius: 50px;
+    background-color: #7681e8;
+  }
+
+  .placeholderbox{
+    display: flex;
+    background-color: gray;
+    margin: 10px;
+    width: 150px;
+    max-width: 150px;
+    min-height: 200px;
+    max-width: fit-content;
+  }
+
+  .profile_pic {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 25px;
+    justify-content: space-evenly;
+    margin: 20px;
+    border: 1px solid rgb(51, 183, 53);;
+    border-radius: 50px;
+    height: 250px;
+    width: 250px;
+  }
+
+  /* =======================
+       DASH BUTTONS
+  =======================*/
+
+    input[type="file"] {
+      opacity: 0;
+    }
+
+    #pp_upload,
+    .dash-btn {
+    display: block;
+    width: 100px;
+    height: 60px;
+    cursor: pointer;
+    background-color: white;
+    font-family: "cabin", sans-serif;
+    font-size: 1.2rem;
+    color: black;
+    border-radius: 50px;
+    background-image: radial-gradient(  white, rgb(141, 255, 126),rgb(23, 137, 208), );  
+  }
+
+  .dash-btn:hover {
+    border: 1px solid #ffffff;
+    box-shadow: 0 0 5px 0 rgb(153, 255, 154);
+  }
+
+  /* =======================
+       THEME PICKER
+  =======================*/
+
+  .theme_area_header {
+    font: 'Cabin';
+    font-size: 25px;
+    color: black;
+    font-weight:900;
+    letter-spacing: .5rem;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .fancy {
+    font-family: cursive;
+  }
+  .theme_picker {
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    align-items: center;
+    border-top: 1px solid black
+  }
+
+  .theme_picker_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(153, 255, 154); 
+    box-shadow: 0px 0px 20px 10px #068f29;
+    border: 15px solid transparent;
+    border-image: linear-gradient(-45deg,rgb(136, 221, 255), rgb(153, 255, 154), rgb(252, 255, 162), rgb(153, 255, 154), rgb(136, 221, 255), transparent) 20% round;
+    border-top: none;
+    border-bottom: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: black;
+  }
+
+  .preview {
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+    box-shadow: 0px 0px 15px 7px #492951;
+  }
+
+  .colorpickerheading{
+    font-family: "cabin", sans-serif;
+    font-size: 30px;
+    color: #9700ff;
+    text-shadow: 2px 2px 2px #000000;
+    text-align: center;
+  }
+
+  .colorpickerwrapper {
+    margin-left: 50px;
+    border: 10px solid transparent;
+    border-radius: 10px;
+  }
+
+  /* =======================
+        COLOR SLIDERS - RGB 
+  =======================*/
+    /* Track: webkit browsers */
+
+  input[type="range"].rgb {
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+    align-self: center;
+    border-radius: 16px;
+    border: 2px solid black;
+    /* creating a custom design */
+    cursor: pointer;
+    outline: none;
+    height: 25px;
+    width: 250px;
+    background: linear-gradient(to right, rgb(255, 0, 0) 0%, rgb(255, 255, 0) 17%, rgb(0, 255, 0) 33%, rgb(0, 255, 255) 50%, rgb(0, 0, 255) 67%, rgb(255, 0, 255) 83%, rgb(255, 0, 0) 100%);
+    border-radius: 16px;
+  }
+
+  /* Track: Mozilla Firefox */
+  input[type="range"].rgb::-moz-range-track {
+    height: 15px;
+    background: linear-gradient(to right, rgb(255, 0, 0) 0%, rgb(255, 255, 0) 17%, rgb(0, 255, 0) 33%, rgb(0, 255, 255) 50%, rgb(0, 0, 255) 67%, rgb(255, 0, 255) 83%, rgb(255, 0, 0) 100%);
+    border-radius: 16px;
+  }
+
+  /* Thumb: webkit */
+  input[type="range"]::-webkit-slider-thumb {
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+    /* creating a custom design */
+    height: 20px;
+    width: 10px;
+    background: radial-gradient(white, gray);
+    border: 2px solid black;
+    border-radius: 16px;
+}
+
+  /* =======================
+      COLOR SLIDERS - Alpha/Opacity
+=======================*/
+
+  input[type="range"].alpha {
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+    /* creating a custom design */
+    width: 250px;
+    cursor: pointer;
+    outline: none;
+    height: 25px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    border-radius: 16px;
+    border: 2px solid black;
+  }
+
+  /* Track: Mozilla Firefox */
+  input[type="range"].alpha::-moz-range-track {
+    height: 15px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    border-radius: 16px;
+  }
+
+  /* =======================
+      COLOR SLIDERS - Brightness
+=======================*/
+
+  input[type="range"].lightness {
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+    /* creating a custom design */
+    width: 250px;
+    cursor: pointer;
+    outline: none;
+    height: 25px;
+    background: linear-gradient(to right, rgba(0, 0, 0), rgba(255, 255, 255));
+    border-radius: 16px;
+    border: 2px solid black;
+  }
+
+  /* Track: Mozilla Firefox */
+  input[type="range"].lightness::-moz-range-track {
+    height: 15px;
+    background: linear-gradient(to right, rgba(0, 0, 0), rgba(255, 255, 255));
+    border-radius: 16px;
+  }
+
+/* ===============
+    CART PAGE 
+ ================ */
