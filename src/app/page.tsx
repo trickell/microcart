@@ -13,6 +13,7 @@ export default function Home() {
           </h1>
           <p>The little cart that <em>does</em></p>
         </div>
+        <Intro />
      </div>
      <div className="demo_area">
           <div className="demo">
@@ -31,7 +32,7 @@ export default function Home() {
           </div>
       </div>
       <div className="homecontent">
-        <Intro />
+      
         <Login />
         <Signup />
       </div>

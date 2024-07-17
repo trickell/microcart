@@ -3,8 +3,14 @@ function Intro() {
   return (
     <section className="section">
       <div className="main-box">
-        <h1>Why you should choose Microfiy to power your small online shop</h1>
-        <p>Easy to use, simple and modifible, microfiy makes it easy to manage your small online business.</p>
+        <h1 className="cabinfont">Microfiy, the cart managment solution</h1>
+        <br></br>
+       
+        <p>
+        A customizable cart that easily integrates into your website to create
+         a personalized shopping experienced for your customers and a straight-forward
+          product management solution.
+        </p>
       </div>
     </section>
     // test

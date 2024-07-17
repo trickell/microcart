@@ -1,6 +1,7 @@
 "use client" // temporarily until the button can be integrated into the Button.js file.
 import React from 'react';
 import Image from 'next/image';
+
 function Login() {
 
   let handleLoginSubmit = (e) => {
@@ -20,7 +21,6 @@ function Login() {
    .then((response) => response.json())
 
   };
-
 
   return (
   
@@ -57,6 +57,7 @@ function Login() {
         </div>
       </div>
 
+
 </section>
 
   )
@@ -64,4 +65,4 @@ function Login() {
 
 };
 
-export default Login;
+export default IsLoggedin;
