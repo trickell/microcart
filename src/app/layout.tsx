@@ -1,7 +1,8 @@
+"use client"
 import React from 'react';
 import Header from './components/Header';
 import "./globals.css";
-import "./index.scss";
+import "../../public/themes/index.scss";
 
 
 
