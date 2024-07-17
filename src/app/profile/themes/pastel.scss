@@ -24,7 +24,7 @@ body {
     height: 300%;
     background-size: cover;
     background-position: center;
-    background-image: conic-gradient( #9700ff, black, blue, #9700ff);
+    background-image: conic-gradient(white, rgb(136, 221, 255), rgb(153, 255, 154), rgb(252, 255, 162), white);
     background-size: cover;
     animation: spin 10s linear infinite;
   }
@@ -42,7 +42,7 @@ body {
   .header_area {
     display: flex;
     justify-content: space-between;
-    background-color: black;
+    background-color: rgb(153, 255, 154);
     flex-direction: column;
   }
 
@@ -56,7 +56,7 @@ body {
     height: 100%;
     width: 100%;
     display: block;
-    background-image: linear-gradient(transparent 80%, aqua, #9700ff);
+    background-image: linear-gradient(transparent 80%, white, rgb(136, 221, 255) );
   }
 
    .pageheader {
@@ -72,12 +72,10 @@ body {
     justify-content: center;
     padding-top: 10px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #9700ff;
-    border-top: 2px solid aqua;
-    background-image: conic-gradient( #9700ff, aqua, #9700ff);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    border-bottom: 1px solid rgb(153, 255, 154);
+    border-top: 2px solid rgb(252, 255, 162);
+    background-image: conic-gradient( rgb(248, 254, 68), rgb(40, 193, 254), rgb(63, 253, 66), rgb(248, 254, 68));
+    color: black;
     letter-spacing: 0.1em;
    }
 
@@ -90,7 +88,7 @@ body {
   input[type="text"],
   input[type="password"],
   input[type="email"] {
-    background-image: linear-gradient(#9700ff, transparent);
+    background-image: linear-gradient(rgb(252, 255, 162), transparent);
     display: flex;
     padding: 10px 8px;
     padding-left: 15px;
@@ -98,30 +96,26 @@ body {
     border-radius: 50px;
     color: #ddd;
     display: flex;
-    background-color: #02218a;
-    box-shadow: inset 2px 3px 20px 5px #000000;
-    border: 2px solid #9700ff;
+    background-color: rgb(153, 255, 154);
+    box-shadow: inset 2px 3px 20px 5px rgb(51, 183, 53);;
+    border: 2px solid rgb(136, 221, 255);
   }
   .input-error{ border: 2px solid red !important; }
 
-  /* Wizard page alignment for labels */
-  #wizard label {
-    width: 16rem;
-    text-align: right;
-  }
-
   .nav {
-    color: #9700ff;
-    box-shadow: inset 0px 0px 5px 0px #000000;
+    color: rgb(40, 193, 254);
+    box-shadow: inset 0px 0px 5px 0px rgb(40, 193, 254);
     border-radius: 50px;
     padding: 10px 8px;
-    border: 1px solid #9700ff;
-    border-top: 2px solid aqua;
-    background-image: conic-gradient( #9700ff, aqua, #9700ff);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    border: 1px solid rgb(153, 255, 154);
+    border-top: 2px solid rgb(252, 255, 162);
+    background-image: conic-gradient(rgb(252, 255, 162), rgb(40, 193, 254), rgb(252, 255, 162));
+    color: black;
     letter-spacing: 0.1em;
+  }
+
+  .nav:hover {
+    box-shadow: 0px 0px 10px 0px #ffffff;
   }
 
   .search-btn {
@@ -136,22 +130,11 @@ body {
   /* ================
    HOME PAGE STUFF ==============================================================
   ================ */
-  .microfy-home {
-    margin-bottom: 50px;
-    padding-top: 50px;
-    border-top: 1px solid aqua;
-    border-radius: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: #02218a;
-    width: 100%;
-    height: 100%;
-  }
+
   
 /* Sections are the main divs for the the intro, login, and signup areas */
   section {
-    background-image: radial-gradient(transparent, blue, #9700ff);
+    background-image: radial-gradient(transparent,rgb(153, 255, 154),rgb(136, 221, 255));
     font-size: 1.5em;
     padding: 5px;
     margin: 20px;
@@ -183,125 +166,12 @@ body {
     font-weight: 700;
    }
 
-    /* =======================
-  DEMO SECTION - FRONT PAGE
-  =======================*/
-
-  .demo_area {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-bottom: 10px;
-
-    min-width: 250px; 
-  }
-
-  .demo,
-  .wizard {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 10px;
-    justify-content: space-evenly;
-    margin: 20px;
-    border-bottom: 1px solid #9700ff;
-    border-radius: 50px;
-    height: 18vh;
-    width: 30vh;
-    padding: 20px;
-    background-image: linear-gradient( #9700ff, transparent, transparent);
-    font-size: 1.6rem;
-  }
-
-   .homecontent {
-    display: flex;
-    flex-direction: row;
-    flex-basis: 100%;
-    border-top: 2px solid #02218a;
-    background-size: cover;
-    border-radius: 50px;
-   }
-
-
-  .main-box,
-  .login {
-    background-color: rgba(0,0,0,.75);
-    border-radius: 50px;
-    padding: 25px; 
-    border: 5px solid #000000;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #ccc;
-    font-size: .85em;
-  }
 
   input
    {
     font-size: 1.2em;
     font-weight: bold;
   }
-
-  .credentials,
-    login-btn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-  }
-
-  .login-wrapper,
-  .Signup {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 10px;
-    justify-content: space-evenly;
-  }
-
-  .login-btn,
-  .signup-btn,
-  form#wizard button
-    {
-    font-size: 1.2em;
-    font-weight: bold;
-    display: flex;
-    border-radius: 50px;
-    padding: 10px;
-    padding-right: 20px;
-    padding-left: 20px;
-    margin-top: 10px;
-    border: 1px solid #9700ff;
-    border-top: 2px solid aqua;
-    background-image: conic-gradient( #9700ff, aqua, #9700ff);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: 0.1em;
-  }
-
-  .Signup {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    margin-top: 10px;
-    height: 150px;
-  }
-
-  .login-btn:hover,
-    form#wizard button:hover,
-    .signup-btn:hover {
-    box-shadow: inset 0px 0px 5px 5px #000000;
-  }
-  form#wizard button {
-    display: flex;
-    flex-direction: row;
-  }
-  form#wizard .login { margin: 5px 0px; }
 
   a,
   a:hover,
@@ -329,12 +199,12 @@ body {
     box-shadow: inset 0px 0px 5px 5px #000000;
     --angle: 0deg;
     border: .2em solid; 
-    border-image: conic-gradient(from var(--angle),  #9700ff, aqua, blue, #9700ff) 1; 
-    background-color: #02218a;
+    border-image: conic-gradient(from var(--angle), rgb(136, 221, 255), rgb(153, 255, 154), rgb(252, 255, 162), rgb(153, 255, 154), rgb(136, 221, 255)) 1; 
+    background-color: rgb(136, 221, 255);
   }
 
    .product-img {
-    background-color: blue;
+    background-color: rgb(136, 221, 255);
     border-radius: 5px;
    }
 
@@ -357,7 +227,7 @@ body {
     padding: 10px;
     justify-content: space-evenly;
     margin: 5px;
-    border: 1px solid #9700ff;
+    border: 1px solid rgb(136, 221, 255);
     border-radius: 50px;
   }
 
@@ -379,10 +249,11 @@ body {
     align-items: center;
     justify-content: space-evenly;
     border-radius: 25px;
-    background-color: #02218a; 
-    box-shadow: 0px 0px 20px 10px #000000;
+    background-color: rgb(136, 221, 255); 
+    box-shadow: 0px 0px 20px 5px rgb(51, 183, 53);
     padding: 40px;
     margin: 30px;
+    color: black;
   }
 
   .user_activities{
@@ -407,8 +278,9 @@ body {
     margin-bottom: 25px;
     margin-top: 25px;
     border-radius: 25px;
-    background-color: #02218a; 
-    box-shadow: 0px 0px 20px 10px #000000;
+    background-color: rgb(136, 221, 255); 
+    box-shadow: 0px 0px 20px 10px rgb(51, 183, 53);
+    color: black;
   }
 
   .dash_titles {
@@ -425,14 +297,6 @@ body {
     margin-top: 10px;
   }
 
-  change_pic {
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
-    border: 1px solid #9700ff;
-    border-radius: 50px;
-    }
-
   .about {
     display: flex;
     flex-direction: column;
@@ -441,8 +305,9 @@ body {
     padding: 10px;
     justify-content: space-evenly;
     margin: 20px;
-    border: 1px solid #9700ff;
+    border: 1px solid #ffffff;
     border-radius: 50px;
+    background-color: #7681e8;
   }
 
   .placeholderbox{
@@ -463,7 +328,7 @@ body {
     padding: 25px;
     justify-content: space-evenly;
     margin: 20px;
-    border: 1px solid #9700ff;
+    border: 1px solid rgb(51, 183, 53);;
     border-radius: 50px;
     height: 250px;
     width: 250px;
@@ -484,17 +349,16 @@ body {
     height: 60px;
     cursor: pointer;
     background-color: white;
-    box-shadow: inset 0px 0px 5px 5px #000000;
     font-family: "cabin", sans-serif;
     font-size: 1.2rem;
     color: black;
     border-radius: 50px;
-    background-image: linear-gradient(#9700ff, aqua, blue, #9700ff);  
+    background-image: radial-gradient(  white, rgb(141, 255, 126),rgb(23, 137, 208), );  
   }
 
   .dash-btn:hover {
     border: 1px solid #ffffff;
-    box-shadow: 0 0 5px 0 #ffffff;
+    box-shadow: 0 0 5px 0 rgb(153, 255, 154);
   }
 
   /* =======================
@@ -504,7 +368,7 @@ body {
   .theme_area_header {
     font: 'Cabin';
     font-size: 25px;
-    color: rgb(255, 255, 255);
+    color: black;
     font-weight:900;
     letter-spacing: .5rem;
     margin-top: 10px;
@@ -526,14 +390,15 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #02218a; 
-    box-shadow: 0px 0px 20px 10px #000000;
+    background-color: rgb(153, 255, 154); 
+    box-shadow: 0px 0px 20px 10px #068f29;
     border: 15px solid transparent;
-    border-image: linear-gradient(-45deg, #560098, rgb(140, 0, 255), rgb(0, 76, 255), #00eaff) 20% round;
+    border-image: linear-gradient(-45deg,rgb(136, 221, 255), rgb(153, 255, 154), rgb(252, 255, 162), rgb(153, 255, 154), rgb(136, 221, 255), transparent) 20% round;
     border-top: none;
     border-bottom: none;
     margin-top: 20px;
     margin-bottom: 20px;
+    color: black;
   }
 
   .preview {

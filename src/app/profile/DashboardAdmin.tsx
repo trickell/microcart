@@ -101,16 +101,8 @@ return (
             <Droptheme /> 
           </div>
         </div>
-        <div className="activity">
-          <button id="showStyles" className="nav" onClick={togglestyles}>Toggle Styler</button>
-          <div hidden id="styler" className="theme_picker_container">
-            <h1 className="theme_area_header">Micro <span className="fancy">Styler</span></h1>
-            <EmployeeRoles /> 
-          </div>
-        </div>
+        
     </div>
-     
-     
 
 );
 } 
