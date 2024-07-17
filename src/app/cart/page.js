@@ -10,35 +10,32 @@ export default function Cart () {
 
 
     
-        <div className="favorites">Sub cart 1
+        <div className="favorites profile_wrapper">Sub cart 1
             <div>
                 <div className="placeholderbox">Cart item</div>
                 <div className="placeholderbox">Cart item</div>
-                <div className="placeholderbox">Cart item</div>
-                <div className="placeholderbox">Cart item</div>
-                <div className="placeholderbox">Cart item</div>
+             
             </div>
             <h2>Microcart total</h2>
             
-            <button>Checkout</button>
+            <button className="dash-btn">Checkout</button>
         </div>
 
-        <div className="favorites">Sub cart 2
+        <div className="favorites profile_wrapper">Sub cart 2
             <div>
                 <div className="placeholderbox">Cart item</div>
                 <div className="placeholderbox">Cart item</div>
-                <div className="placeholderbox">Cart item</div>
-                <div className="placeholderbox">Cart item</div>
-                <div className="placeholderbox">Cart item</div>
+     
             </div>
             <h2>Microcart total</h2>
             
-            <button>Checkout</button>
+            <button className="dash-btn">Checkout</button>
         </div>
+        <div className="profile_wrapper">
         <h1>Master Cart Total:</h1>
        
-            <button>Checkout</button>
-
+        <button className="dash-btn">Checkout</button>
+        </div>
     </div>
 )
 }

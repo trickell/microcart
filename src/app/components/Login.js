@@ -65,4 +65,4 @@ function Login() {
 
 };
 
-export default IsLoggedin;
+export default Login;
