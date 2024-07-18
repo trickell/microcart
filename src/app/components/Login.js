@@ -1,25 +1,35 @@
 "use client" // temporarily until the button can be integrated into the Button.js file.
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 
 function Login() {
 
-  let handleLoginSubmit = (e) => {
+  const [ errorMsg, setErrorMsg ] = useState('');
+
+  const handleLoginSubmit = async (e) => {
     e.preventDefault();
     // Set username and password from form fields
-    let email = document.getElementById('login').value;
-    let password = document.getElementById('password').value;
+    const email = document.getElementById('login').value;
+    const password = document.getElementById('password').value;
 
     // Make a POST request to the server to authenticate the user
-    fetch('/api/login', {
+    const response = await fetch('/api/login', {
       method: 'POST',
-      headers: {
+      headers: new Headers({
         'Content-Type': 'application/json',
-      },
+        'Accept': 'application/json'
+      }),
       body: JSON.stringify({ username: email, password: password }),
-    })
-   .then((response) => response.json())
-
+    });
+    const res = await response.json();
+    console.log(response);
+    
+    if(res.error){
+      setErrorMsg(res.error);
+      console.log(res.error);
+      return;
+    }
+    setErrorMsg('');
   };
 
   return (
@@ -40,15 +50,19 @@ function Login() {
               type="text"
               className="email"
               id="login"
-              placeholder="email" />
+              placeholder="email"
+              onChange={() => setErrorMsg("")} />
           </div>
           <div>
             <input
               type="text"
               className="password"
               id="password"
-              placeholder="password"/>
-          </div> 
+              placeholder="password"
+              onChange={() => setErrorMsg("")}/>
+              
+          </div>
+          <p className={errorMsg ? "" : "hidden"}>{errorMsg}</p> 
           <div> 
             <button className="login-btn" onClick={handleLoginSubmit}>
             Log In  

@@ -8,7 +8,7 @@ and determine the user data we send to the client.
 import seq from '../dbconnect';
 import { Sequelize } from 'sequelize';
 
-const Admin = seq.define('Admin', {
+const Admin = seq.define('admin', {
     id: {
         field: 'id',
         type: Sequelize.INTEGER,
@@ -21,6 +21,14 @@ const Admin = seq.define('Admin', {
     },
     password: {
         field: 'name',
+        'type': Sequelize.STRING
+    },
+    name: {
+        field: 'name',
+        'type': Sequelize.STRING
+    },
+    email: {
+        field: 'email',
         'type': Sequelize.STRING
     },
     created: {

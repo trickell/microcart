@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import User from '../models/user';
 import Address from '../models/address';
 import { Sequelize } from 'sequelize';
+import bcrypt from "bcrypt";
 
 // This will be our GET request from the client
 export async function GET(req){
@@ -24,6 +25,21 @@ export async function GET(req){
         foreignKey:'shipping_id',
         foreignKey: 'billing_id'
     });
+
+    // Let's create some random data if createRandomData is true (only use to create random data in user table)
+    if(req.nextUrl.searchParams.get('createRandomData') === 'true'){
+        let bc_password = bcrypt.hashSync('password123', 10); // Hash the password
+        
+        // Create the user using the Model
+        User.create({
+            cart_ids: [{'cart_id': 1 }], // 1 for testing, will read from users table and grab the rowcount + 1 
+            username: 'random_user' + Math.floor(Math.random() * 10000),
+            password: bc_password,
+            email: 'random_email' + Math.floor(Math.random() * 10000) + '@example.com',
+            name: 'random_name' + Math.floor(Math.random() * 10000),
+            created: new Date()
+        });
+    }
     
     // Check if the user_id is defined, or pull by all
     if(userData.id === null) {
@@ -60,18 +76,6 @@ export async function GET(req){
             status: 200
         });
     }
-    
-    // Let's create some random data if createRandomData is true (only use to create random data in user table)
-    if(req.nextUrl.searchParams.get('createRandomData') === 'true'){
-        User.create({
-            username: 'random_user' + Math.floor(Math.random() * 10000),
-            password: 'random_password' + Math.floor(Math.random() * 10000),
-            email: 'random_email' + Math.floor(Math.random() * 10000) + '@example.com',
-            name: 'random_name' + Math.floor(Math.random() * 10000),
-            created: new Date()
-        });
-    }
-
 }
 
 // This will be the POST Request from the client when a new User is being inserted

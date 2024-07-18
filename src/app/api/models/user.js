@@ -9,6 +9,10 @@ import seq from '../dbconnect';
 import { Sequelize } from 'sequelize';
 
 const User = seq.define('user', {
+    cart_ids: {
+        field: 'cart_id',
+        type: Sequelize.JSONB
+    },
     id: {
         field: 'id',
         type: Sequelize.INTEGER,
@@ -17,6 +21,10 @@ const User = seq.define('user', {
     },
     username: {
         field: 'username',
+        'type': Sequelize.STRING
+    },
+    password: {
+        field: 'password',
         'type': Sequelize.STRING
     },
     name: {

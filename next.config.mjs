@@ -3,6 +3,9 @@ const nextConfig = {
     images: {
         domains: ['via.placeholder.com'],
       },
+    api: {
+      bodyParser: true,
+    }
   }
 
 
