@@ -1,4 +1,17 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Microcart!!!!
+
+Do you remember your time at an outlet mall? How cool it was to be apart of that as a shop? You don't? That's ok, because you can be a part of the online outlet market
+with Microcart. Microcart is an easy to use shop interface, kinda like shopify, but easier for everyone. It's small, some would say micro small, and easy
+to integrate into already made websites. Don't have a website? That's ok! We'll make you a single page market that has you products, shop information, details, and shop logo,
+contact information, and cart ALL in one spot so you don't have to. 
+
+I know. Your thinking what's the subscription gonna cost to use this market? What if we told you it's completely free of use. The only thing it'll cost you is 2% per transaction plus the gateway fees. But until then, you can test it, create a shop, ALL FOR FREE! Themes you ask?! YES INDEED! Grab one of the few themes from the page
+and enjoy free and easy style bars to quickly manage the style. Want additional themes? We will offer a premium cart interface that'll allow u to either purchase a 
+theme once for use or, wait for it, a cheap subscription to get all the themes added and additional themes as they come about.
+
+Not only is it incredibly easy to setup, manage, and maintain, but it's also all linked to the microcart market meaning your users can create a single interface and shop anywhere. Also, you get to meet people in the market, join a place that'll get you more views, and have more "foot traffic" to the shop. 
+
+It's as simple as entering the wizard and filling out a couple forms. What are you waiting for?! Join the market now!
 
 ## Getting Started
 

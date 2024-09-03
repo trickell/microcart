@@ -8,7 +8,7 @@ and determine the address data we send to the client.
 import sequelize from '../dbconnect';
 import { Sequelize } from 'sequelize';
 
-module.exports = sequelize.define('Address', {
+const Address = sequelize.define('address', {
     id: {
         field: 'id',
         type: Sequelize.INTEGER,
@@ -44,3 +44,5 @@ module.exports = sequelize.define('Address', {
 }, {
     timestamps: true,
 });
+
+export default Address;

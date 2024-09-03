@@ -1,28 +1,39 @@
 "use client"
-import React from 'react'
+import React from 'react';
 
-const Input = ({ label, type, id, placeholder, validate }) => {
+const Input = ({ label, type, id, placeholder, validate, onChange, inputVal }) => {
   
     const [query, setQuery] = React.useState(""); // Will hold the state change of each input field value
     const [error, setError] = React.useState(""); // Will hold the state change of the error field
-    const [starting, setStarting] = React.useState(false); // Flag to indicate if input field is starting to get focus
+    const [starting, setStarting] = React.useState(false); // Flag to indicate if input field is starting to get focus    
 
     // useEffect hook to validate the input field value every 500ms OR change(default)
-    React.useEffect(() => {
+    React.useEffect((e) => {
       const timeOutId = setTimeout(() => {
         // setError(() => error)
-        console.log(starting);
-        if(starting == true){ validateInput(query)};
+        
+        if(starting == true){ 
+          validateInput(query)
+          
+          // Let's store the input to an object to be used later          
+          savedFormData[id] = query;  
+          
+          // Store it in the summary page for the user to review
+          (document.getElementById(id+'-summary')) ? document.getElementById(id+'-summary').innerHTML = query : null;
+        };
+
       }, 500);
 
-      console.log(validate);
+      
       return () => clearTimeout(timeOutId);
     }, [query])
+
+    
     
     // Validation Methods for different types of inputs 
     let validateInput = () => {
       // If marked as required validation, will use this validation on input
-      console.log(query.validate);
+      // console.log(query.validate);
       if (validate){ 
         // Required Validation for fields marked required
         if (query.trim() == "" && validate.includes("required")) {
@@ -46,9 +57,9 @@ const Input = ({ label, type, id, placeholder, validate }) => {
         // If all fields pass, clear error message
         else {
           setError("");
-        }
+        };
       }
-    }
+}
   
     
   return (
@@ -65,6 +76,7 @@ const Input = ({ label, type, id, placeholder, validate }) => {
           placeholder={placeholder}
           onFocus={() => setStarting(true)}
           onChange={(event) => setQuery(event.target.value)}
+          ref={inputVal}
           value={query}
           validate={validate}
         />

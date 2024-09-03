@@ -1,0 +1,24 @@
+# This grabs from the docker image library the official node image
+FROM node:22-alpine
+
+# Avoids a bug with node-gyp
+RUN APK add --no-cache libc6-compat
+
+# Setup the working directory
+WORKDIR /app
+
+# Next.js collects completely anonymous telemetry data about general usage.
+# It is used to help improve Next.js. The data collection is enabled by default.
+# You can disable it by setting the environment variable NEXT_TELEMETRY_DISABLED to any value other than 1.
+ENV NEXT_TELEMETRY_DISABLED 1
+
+# Install Dependencies
+COPY package.json package-lock.json ./
+RUN npm install
+
+# EXPOSE 3000  // This is not needed as we are using docker-compose to expose the port
+
+COPY . .
+
+# Runs the app npm run dev
+CMD ["npm", "run", "dev"]

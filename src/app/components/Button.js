@@ -17,14 +17,12 @@ function BtnType(props){
                 document.getElementById(props.showID).classList.remove('hidden');
                 document.getElementById(props.hideID).classList.add('hidden');
             }}>Continue</button>;
-
-        case 'submit':
-            return <button type="button" onClick={(e) => {
-                e.target.form.submit(()=> {
-                    e.preventDefault();
-                    console.log("made it!");
-                });
-            }}>Submit</button>;
+        // case 'submit':
+        //     return <button type="button" onClick={(e) => {
+        //         e.preventDefault();                
+        //         console.log("made it!");
+        //         console.log(props.formData);                
+        //     }}>Submit</button>;
         
         default:
             return null;

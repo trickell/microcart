@@ -3,7 +3,8 @@ import Intro from "./components/Intro"
 import Login from "./components/Login.js"
 import Signup from "./components/Signup.js"
 
-export default function Home() {
+export default function Home(props) {
+  
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="container">

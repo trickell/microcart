@@ -1,30 +1,121 @@
-import Input from '../components/Input';
-import Theme from '../components/Theme';
+"use client"
+import React from 'react';
+import { useForm } from 'react-hook-form';
 import BtnType from '../components/Button';
 
 export default function Wizard() {
+
+    const { register, handleSubmit, formState: {errors} } = useForm({ mode: 'all', reValidateMode: 'onChange', criteriaMode: 'all', shouldFocusError: true });
+    const [query, setQuery] = React.useState(""); // Will hold the state change of each input field value
+
+    // Validate the password and confirm password fields    
+    const validatePassword = (pass) => {
+        // Password validation
+        const confirmPass = document.getElementById("wizard").elements["passw"].value;
+        if(pass !== confirmPass){
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+    
+    const updateSummary = (elem) => {
+        console.log(elem.target.name);
+        (document.getElementById(elem.target.name + '-summary')) ? document.getElementById(elem.target.name +'-summary').innerHTML = elem.target.value : null;
+    }
+
+    // Make a POST request to the API to create a new shop
+    // This will be the eventual call when I figure out how to watch for an onClick event outside the Input component to handle the summary data
+    // ===== Right now data is being stored in the input component and handled there for every input. There needs to be another event listener 
+    // ===== to handle the summary data and then submit the form data to the API
+    const createShop = async (data) => {    
+
+        console.log(data);
+        
+        const response = await fetch('/api/createshop', {
+            method: 'POST',
+            headers: new Headers({
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            }),
+            body: JSON.stringify({ 
+                shopName: data.shopName,
+                shopUrl: data.shopUrl,
+                email: data.email,
+                username: data.username,
+                password: data.passw,
+                products: data.products,
+                theme: data.theme
+            }),
+          });
+          const res = await response.json();
+    };
+    
+
+    // First part of form has new content from react-hook-form
     return (
         <div>
             <h1>Generate Your New Shopping Cart Experience</h1>
-            <form className="flex gap-4 flex-col cabinfont" id="wizard">
+            <form className="flex gap-4 flex-col cabinfont" id="wizard" onSubmit={handleSubmit((data) => {
+                createShop(data);
+            })}>
                 <div id="first">
-                    <Input label="shopName" type="text" id="shop-name" placeholder="Shop Name" validate={['required']} />
-                    <Input label="shopUrl" type="text" id="shop-url" placeholder="Shop URL" />
+                    {/* <Input label="shopName" type="text" id="shop-name" placeholder="Shop Name" validate={['required']} inputValue={inputVal} onBlur={(e)=>setFormData(e)} />
+                    <Input label="shopUrl" type="text" id="shop-url" placeholder="Shop URL" inputValue={inputVal} onBlur={(e)=>setFormData(e)} /> */}
+                    
+                    <input type="text" id="shopName" className="w-full p-5 font-medium border rounded-md border-slate-300 placeholder:opacity-60" {...register("shopName", {required: 'Input is required'})} placeholder="Shop Name" onChange={(e) => updateSummary(e) }/>
+                    <p>{errors.shopName?.message}</p>
+                    <input type="text" id="shopUrl" {...register("shopUrl", {
+                            pattern: {
+                                value: /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/,
+                                message: 'Wrong URL format for a website. ' // JS only: <p>error message</p> TS only support string
+                            }})} placeholder="Shop URL" onChange={(e) => updateSummary(e) } />
+                    <p>{errors.shopUrl?.message}</p>
+
                     <BtnType type="next" showID="page2" hideID="first" />
                 </div>
                 <div id="page2" className="flex-col hidden">
-                    <Input label="template" type="text" id="theme" placeholder="Select a Theme" />
-                    <Theme />
+                    {/* <Input label="template" type="text" id="theme" placeholder="Select a Theme" inputValue={inputVal} /> */}
+                    <label htmlFor="theme">Select a Theme</label>
+                    <select name="theme" id="theme" className="w-full p-5 px-10 font-medium border rounded-none bg-slate-900 border-slate-300 placeholder:opacity-60" {...register("theme")} placeholder="Select a Theme" onChange={(e) => updateSummary(e) } >
+                        <option value="0" defaultChecked>Select a Theme</option>
+                        <option value="Theme1">Theme 1</option>
+                        <option value="Theme2">Theme 2</option>
+                        <option value="Theme3">Theme 3</option>
+                    </select>                    
                     <div className="flex flex-row">
                         <BtnType type="back" showID="first" hideID="page2" />
                         <BtnType type="next" showID="page3" hideID="page2" />
                     </div>
                 </div>
                 <div id="page3" className="flex-col hidden">
-                    <Input label="username" type="text" id="name" placeholder="Your Admin Username" validate={['required']} />
-                    <Input label="password" type="password" id="password" placeholder="Password" validate={['required','password']} />
-                    <Input label="confirm Pass" type="password" id="confirm-password" placeholder="Confirm Password" validate={['required','confirmPass']} />
-                    <Input label="email" type="email" id="email" placeholder="Email" validate={['required','email']} />
+                    {/* <Input label="username" type="text" id="name" placeholder="Your Admin Username" validate={['required']} inputValue={inputVal} onBlur={(e)=>setFormInput.username = e.target.value} />
+                    <Input label="password" type="password" id="password" placeholder="Password" validate={['required','password']} inputValue={inputVal} />
+                    <Input label="confirm Pass" type="password" id="confirm-password" placeholder="Confirm Password" validate={['required','confirmPass']} inputValue={inputVal} />
+                    <Input label="email" type="email" id="email" placeholder="Email" validate={['required','email']} inputValue={inputVal} onBlur={(e)=>setFormInput.email = e.target.value} /> */}
+                    <input type="text" id="username" {...register("username", {required: 'Username is required'})} placeholder="Your Username" onChange={(e) => updateSummary(e) } />
+                    <p>{errors.username?.message}</p>
+                    <input type="password" id="passw" {...register("passw", {required: 'Password is required'})} placeholder="Password" />
+                    <p>{errors.passw?.message}</p>
+                    <input type="password" 
+                    {...register("confirmpassw", 
+                        { validate: 
+                            { 
+                                type: pass => validatePassword(pass) || "Passwords do not match",                                    
+                            },
+                          required: 'Enter your password again'
+                        })
+                    }
+                    placeholder="Confirm Password" />
+                    <p>{errors.confirmpassw?.message}</p>
+                    <input type="email" id="email" {...register("email", {
+                            pattern: {
+                                value: /^\S+@\S+\.\S+$/i,
+                                message: 'This is not the right format for an Email Address.' // JS only: <p>error message</p> TS only support string
+                            }
+                        })} placeholder="Email" onChange={(e) => updateSummary(e) } />
+                    <p>{errors.email?.message}</p>
                     <div className="flex flex-row">
                         <BtnType type="back" showID="page2" hideID="page3" />
                         <BtnType type="next" showID="page4" hideID="page3" />
@@ -48,14 +139,14 @@ export default function Wizard() {
                 </div>
                 <div id="summary" className="hidden">
                     <h2>Summary</h2>
-                    <p>Shop Name: <span id="shop-name-summary"></span></p>
-                    <p>Shop URL: <span id="shop-url-summary"></span></p>
+                    <p>Shop Name: <span id="shopName-summary"></span></p>
+                    <p>Shop URL: <span id="shopUrl-summary"></span></p>
                     <p>Theme: <span id="theme-summary"></span></p>
-                    <p>Username: <span id="name-summary"></span></p>
+                    <p>Username: <span id="username-summary"></span></p>
                     <p>Email: <span id="email-summary"></span></p>
                     <div className="flex flex-row">
-                        <BtnType type="back" showID="page4" hideID="summary" />
-                        <BtnType type="submit" />
+                        <BtnType type="back" showID="page4" hideID="summary" />                        
+                        <input type="submit" value="Submit"></input>
                     </div>
                 </div>
             </form>
