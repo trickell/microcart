@@ -1,14 +1,17 @@
-docker-build: # 1. build the app 
+docker-build:
 	docker compose build --pull --no-cache
 
-docker-up: # 2. start the app
+docker-up:
 	docker compose up -d
 
-docker-down: # 3. stop the app
-	docker compose down
+docker-down:
+	docker compose down --remove-orphans
 
-docker-logs: # 4. show the logs
-	docker compose logs -f
+docker-down-all:
+	docker compose down -v --remove-orphans
 
-# npm-install-library:
-# 	docker compose run --rm microcart-app npm install $(library)
+npm-install-library:
+	docker compose run --rm microcart-app npm install $(library)
+
+show-logs:
+	docker compose logs --tail=0 --follow
