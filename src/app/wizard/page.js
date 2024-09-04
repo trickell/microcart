@@ -56,7 +56,7 @@ export default function Wizard() {
     // First part of form has new content from react-hook-form
     return (
         <div>
-            <h1>Generate Your New Shopping Cart Experience</h1>
+            <h1 className="p-5 text-2xl my-5 border rounded-md bg-slate-900 border-slate-500 placeholder:opacity-60">Generate Your New Shopping Cart Experience</h1>
             <form className="flex gap-4 flex-col cabinfont" id="wizard" onSubmit={handleSubmit((data) => {
                 createShop(data);
             })}>
@@ -64,14 +64,14 @@ export default function Wizard() {
                     {/* <Input label="shopName" type="text" id="shop-name" placeholder="Shop Name" validate={['required']} inputValue={inputVal} onBlur={(e)=>setFormData(e)} />
                     <Input label="shopUrl" type="text" id="shop-url" placeholder="Shop URL" inputValue={inputVal} onBlur={(e)=>setFormData(e)} /> */}
                     
-                    <input type="text" id="shopName" className="w-full p-5 font-medium border rounded-md border-slate-300 placeholder:opacity-60" {...register("shopName", {required: 'Input is required'})} placeholder="Shop Name" onChange={(e) => updateSummary(e) }/>
-                    <p>{errors.shopName?.message}</p>
-                    <input type="text" id="shopUrl" {...register("shopUrl", {
+                    <input type="text" id="shopName" className="w-full p-5 font-medium border rounded-md border-slate-300 placeholder:opacity-60" {...register("shopName", {required: 'Input is required'})} placeholder="Shop Name" onChange={(e) => updateSummary(e) } invalid={errors.shopName ? "true" : "false"} />
+                    <p class="error-msg">{errors.shopName?.message}</p>
+                    <input type="text" id="shopUrl" className="w-full p-5 font-medium border rounded-md border-slate-300 placeholder:opacity-60" {...register("shopUrl", {
                             pattern: {
                                 value: /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/,
                                 message: 'Wrong URL format for a website. ' // JS only: <p>error message</p> TS only support string
-                            }})} placeholder="Shop URL" onChange={(e) => updateSummary(e) } />
-                    <p>{errors.shopUrl?.message}</p>
+                            }})} placeholder="Shop URL" onChange={(e) => updateSummary(e) }  invalid={errors.shopUrl ? "true" : "false"} />
+                    <p class="error-msg">{errors.shopUrl?.message}</p>
 
                     <BtnType type="next" showID="page2" hideID="first" />
                 </div>
@@ -94,11 +94,11 @@ export default function Wizard() {
                     <Input label="password" type="password" id="password" placeholder="Password" validate={['required','password']} inputValue={inputVal} />
                     <Input label="confirm Pass" type="password" id="confirm-password" placeholder="Confirm Password" validate={['required','confirmPass']} inputValue={inputVal} />
                     <Input label="email" type="email" id="email" placeholder="Email" validate={['required','email']} inputValue={inputVal} onBlur={(e)=>setFormInput.email = e.target.value} /> */}
-                    <input type="text" id="username" {...register("username", {required: 'Username is required'})} placeholder="Your Username" onChange={(e) => updateSummary(e) } />
-                    <p>{errors.username?.message}</p>
-                    <input type="password" id="passw" {...register("passw", {required: 'Password is required'})} placeholder="Password" />
-                    <p>{errors.passw?.message}</p>
-                    <input type="password" 
+                    <input type="text" id="username" className="w-full p-5 font-medium border rounded-md border-slate-300 placeholder:opacity-60" {...register("username", {required: 'Username is required'})} placeholder="Your Username" onChange={(e) => updateSummary(e) } />
+                    <p class="error-msg">{errors.username?.message}</p>
+                    <input type="password" id="passw" className="w-full p-5 font-medium border rounded-md border-slate-300 placeholder:opacity-60"{...register("passw", {required: 'Password is required'})} placeholder="Password" />
+                    <p class="error-msg">{errors.passw?.message}</p>
+                    <input type="password" className="w-full p-5 font-medium border rounded-md border-slate-300 placeholder:opacity-60"
                     {...register("confirmpassw", 
                         { validate: 
                             { 
@@ -108,14 +108,14 @@ export default function Wizard() {
                         })
                     }
                     placeholder="Confirm Password" />
-                    <p>{errors.confirmpassw?.message}</p>
-                    <input type="email" id="email" {...register("email", {
+                    <p class="error-msg">{errors.confirmpassw?.message}</p>
+                    <input type="email" id="email" className="w-full p-5 font-medium border rounded-md border-slate-300 placeholder:opacity-60" {...register("email", {
                             pattern: {
                                 value: /^\S+@\S+\.\S+$/i,
                                 message: 'This is not the right format for an Email Address.' // JS only: <p>error message</p> TS only support string
                             }
                         })} placeholder="Email" onChange={(e) => updateSummary(e) } />
-                    <p>{errors.email?.message}</p>
+                    <p class="error-msg">{errors.email?.message}</p>
                     <div className="flex flex-row">
                         <BtnType type="back" showID="page2" hideID="page3" />
                         <BtnType type="next" showID="page4" hideID="page3" />

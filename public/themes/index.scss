@@ -298,12 +298,22 @@ body {
     .signup-btn:hover {
     box-shadow: inset 0px 0px 5px 5px #000000;
   }
+
+  /* ***********************
+  Brief Form Wizard Changes 
+  **************************/
   form#wizard button {
     display: flex;
     flex-direction: row;
   }
   form#wizard .login { margin: 5px 0px; }
+  input[invalid=true] { border: 2px solid red; }
+  .error-msg { color: red; font-size: 1.2em; text-shadow: 2px 2px 4px #000; margin: 3px 10px; }
 
+
+  /* =======================
+  DEMO SECTION - FRONT PAGE BACK
+  =======================*/
   a,
   a:hover,
   a:focus,

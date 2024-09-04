@@ -11,7 +11,7 @@ const Product = () => {
             return res.json();
         })
         .then((data) => {            
-            data = data.slice(0,50)
+            data = data.slice(0,10)
             console.log(data);
             setProduct(data);
         });
